@@ -9,7 +9,7 @@ https://www.npmjs.com/get-npm
 2. Clone the dev2 version of this repo onto your machine.
 
 3. In the root of that directory, run the following commands:<br/>
-`npm install react next antd @zeit/next.css`<br/>
+`npm install react next --save @zeit/next.css`<br/>
 `npm run dev`<br/>
 This should automatically open https://localhost:3000 in your browser. 
 

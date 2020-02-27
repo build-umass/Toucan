@@ -6,9 +6,13 @@ Front End for IHop
 1. Download npm and node.js here: 
 https://www.npmjs.com/get-npm
 
-2. Clone the dev2 version of this repo onto your machine.
+3. In your command line, navigate to the directory in which you want to work.<br/>
 
-3. In the root of that directory, run the following commands:<br/>
+4. Type the following commands.
+`git init`
+`git remote add origin https://github.com/build-umass/Toucan.git`
+`git pull origin dev2`
+
 `npm install`<br/>
 `npm run dev`<br/>
 

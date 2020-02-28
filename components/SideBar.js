@@ -1,4 +1,4 @@
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 import React, {useState} from 'react';
 import Router from 'next/router';
 
@@ -6,15 +6,15 @@ const {Sider } = Layout;
 const { SubMenu } = Menu;
 
 
-function  onCollapse (collapsed){
-    console.log(collapsed);
-    setCollapsed(collapsed);
-  };
+
 
 export default function SideBar(props){
 
     const [collapsed,setCollapsed] = useState(false)
-
+    function  onCollapse (collapsed){
+      console.log(collapsed);
+      setCollapsed(collapsed);
+    };
     return(
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
           <div className="logo" />

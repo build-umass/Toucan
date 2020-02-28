@@ -17,14 +17,20 @@ const { SubMenu } = Menu;
       <Layout style={{ minHeight: '100vh' }}>
 
         <Layout>
-        <MyHeader/>
+        <MyHeader itemOne ="profile"/>
         <Layout>
         <SideBar/>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>Home</Breadcrumb.Item>
             </Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Bill is a cat.</div>
+            
+            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+              <Test>
+                <p>hello world</p>
+              </Test>
+
+            </div>
           </Content>
           </Layout>
           <Footer style={{ textAlign: 'center' }}>Build UMass</Footer>

@@ -11,7 +11,7 @@ export default function about(){
         <Layout style={{ minHeight: '100vh' }}>
     
         <Layout>
-        <MyHeader/>
+        <MyHeader itemOne = "Profile"/>
         <Layout>
         <SideBar selected={2}/>
           <Content style={{ margin: '0 16px' }}>

@@ -17,7 +17,7 @@ export default function settings(){
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>Settings</Breadcrumb.Item>
             </Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Settings page.</div>
+            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Settings page</div>
           </Content>
           </Layout>
           <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>

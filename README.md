@@ -11,7 +11,8 @@ https://www.npmjs.com/get-npm
 3. In the root of that directory, run the following commands:<br/>
 `npm install`<br/>
 `npm run dev`<br/>
-This should automatically open https://localhost:3000 in your browser. 
+
+4. Open https://localhost:3000 in your browser. 
 
 ### Info:
-https://localhost:3000 is displayed from pages/index.js by default. We will be doing most of our work in the /pages and /components directory. The pages will be explicitly for standalone pages, such as the home page, members, login, and form building pages. The /components directory will be used to make the pieces we use inside of those pages.
+https://localhost:3000 is displayed from pages/index.js by default. We will be doing most of our work in the `/pages` and `/components` directories. `/pages` will be explicitly for standalone pages, such as the home page, members, login, and form building pages. The `/components` directory will be used to make the pieces we use inside of those pages.

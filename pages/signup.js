@@ -59,9 +59,7 @@ const { SubMenu } = Menu;
         <Form
           {...formItemLayout}
           layout= "horizontal"
-          initialValues={{}}
           className="boxes"
-          scrollToFirstError
           style={{position: "relative", margin: "auto"}}
         >
 
@@ -141,7 +139,6 @@ const { SubMenu } = Menu;
 
           <Form.Item 
             name="agreement" 
-            valuePropName="checked" 
             {...tailFormItemLayout}
             className="checkbox"
             >

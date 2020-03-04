@@ -69,7 +69,9 @@ export  default function Login() {
           </Form.Item>
 
           <Form.Item>
-            <Form.Item name="remember" valuePropName="checked">
+            <Form.Item 
+              name="remember"
+            >
               <Checkbox 
                 style={{float: 'left'}}>
                 Remember me

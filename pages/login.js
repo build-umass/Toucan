@@ -1,9 +1,6 @@
-import { Form, Icon, Input, Checkbox, Button, Layout, Menu, } from 'antd';
+import React from 'react';
+import { Form, Icon, Input, Checkbox, Button, Layout, Menu} from 'antd';
 import '../node_modules/antd/dist/antd.css'
-import React, {useState} from 'react';
-import { useRouter } from 'next/router';
-const { Content, Footer } = Layout;
-const { SubMenu } = Menu;
 
 export  default function Login() {
 

@@ -34,7 +34,7 @@ export default function FormBuilder(){
       questions = questions.map(x => x); //for some reason this is needed to the array of components can be read
       setQuestionsArr(questions);
     } else if (name === "delete") {
-      if(num != 0) {
+      if(num != 1) {
         setNumQuestions(--num);
         questions.pop();
         questions = questions.map(x => x);

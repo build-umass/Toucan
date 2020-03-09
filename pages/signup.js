@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import './signup.css'
 const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
+import cookie from 'js-cookie';
 
   export  default function Login() {
 
@@ -152,6 +153,7 @@ const { SubMenu } = Menu;
               type="primary" 
               htmlType="submit"
               className="button"
+              onClick={()=>cookie.set("session","user",{ expires: 3 })}
               style={{ width: '100px', background: "blue" }}>                     
               Register
             </Button>

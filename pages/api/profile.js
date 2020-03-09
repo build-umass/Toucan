@@ -10,7 +10,6 @@ export default async (req, res) => {
   try {
     const { token } = JSON.parse(auth)
     const url = `https://api.github.com/user/${token}`
-
     const response = await fetch(url)
 
     if (response.ok) {

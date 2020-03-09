@@ -3,7 +3,6 @@ import '../node_modules/antd/dist/antd.css'
 import React, {useState} from 'react';
 import { login } from '../utils/auth'
 
-import { useRouter } from 'next/router';
 const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
@@ -16,12 +15,11 @@ export  default function Login() {
     setUserData(Object.assign({}, userData, { error: '' }))
 
     const username = userData.username
-    const url = '/api/login'
+    const url = 'https://test-owl.herokuapp.com'
 
     try {
       const response = await fetch(url, {
         method: 'POST',
-
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username }),
       })
@@ -30,7 +28,6 @@ export  default function Login() {
         await login({ token })
       } else {
         console.log('Login failed.')
-        // https://github.com/developit/unfetch#caveats
         let error = new Error(response.statusText)
         error.response = response
         throw error

@@ -5,16 +5,17 @@ import cookie from 'js-cookie'
 
 export const login = ({ token }) => {
   cookie.set('token', token, { expires: 1 })
-  Router.push('/profile')
+  Router.push('/')
 }
 
 export const auth = ctx => {
-  const { token } = nextCookie(ctx)
+//TODO: add 
 
+  const { token } = nextCookie(ctx)
   // If there's no token, it means the user is not logged in.
   if (!token) {
     if (typeof window === 'undefined') {
-      ctx.res.writeHead(302, { Location: '/login' })
+      ctx.res.writeHead(302, { Location: '/login' })  
       ctx.res.end()
     } else {
       Router.push('/login')

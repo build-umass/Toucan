@@ -6,7 +6,7 @@ import { withAuthSync } from '../utils/auth';
 
 const { Content, Footer } = Layout;
 
-export default function Settings(){
+const Settings = (props) =>{
     return(
         <Layout style={{ minHeight: '100vh' }}>
     

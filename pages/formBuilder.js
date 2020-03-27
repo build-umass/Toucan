@@ -3,9 +3,8 @@ import MyHeader from '../components/MyHeader';
 import SideBar from '../components/SideBar';
 import Question from '../components/Question';
 import '../node_modules/antd/dist/antd.css'
-import { Layout, Breadcrumb, Button} from 'antd';
 
-import { Layout, Menu, Breadcrumb, Button, Icon } from 'antd';
+import { Layout, Breadcrumb, Button } from 'antd';
 import { withAuthSync } from '../utils/auth';
 
 const { Content, Footer } = Layout;

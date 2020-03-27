@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, Icon, Input, Checkbox, Button, Layout, Menu} from 'antd';
 import '../node_modules/antd/dist/antd.css'
 

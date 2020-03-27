@@ -6,8 +6,9 @@ const { Content, Footer } = Layout;
 import MyHeader from '../components/MyHeader';
 import SideBar from '../components/SideBar';
 import '../node_modules/antd/dist/antd.css'
+import { withAuthSync } from '../utils/auth';
 
-export default function Members() {
+const Members=()=> {
     return(
         <Layout style={{ minHeight: '100vh' }}>
     
@@ -28,4 +29,5 @@ export default function Members() {
       </Layout>
         );
 
-}
+} 
+export default withAuthSync(Members)

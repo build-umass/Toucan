@@ -3,6 +3,7 @@ import { Layout, Breadcrumb} from 'antd';
 import SideBar from '../components/SideBar';
 import '../node_modules/antd/dist/antd.css'
 import { Avatar } from 'antd';
+import { withAuthSync } from '../utils/auth'
 import { UserOutlined } from '@ant-design/icons';
 import { Descriptions } from 'antd';
 import { Typography } from 'antd';
@@ -12,31 +13,30 @@ const { Paragraph } = Typography;
 const { Content, Footer } = Layout;
 
 
-class profile extends React.Component{
+const  Profile = props =>{
 
-state = {
+
+let nostate = {
   email: "johndoe@umass.edu",
   ID: "10000000",
   phno: "1000000000"
 };
 
 
-onChangeEmail = email => {
+const onChangeEmail = email => {
   console.log('Content change:', email);
-  this.setState({ email });
+  nostate.email =  email ;
 };
 
-onChangeID = ID => {
+const onChangeID = ID => {
   console.log('Content change:', ID);
-  this.setState({ ID });
+  nostate.ID= ID;
 };
 
-onChangePhno = phno => {
+const onChangePhno = phno => {
   console.log('Content change:', phno);
-  this.setState({ phno });
+  nostate.phno = phno;
 };
-
- render(){
        return(
         <Layout style={{ minHeight: '100vh' }}>
     
@@ -53,17 +53,17 @@ onChangePhno = phno => {
             <Avatar size={200} icon={<UserOutlined />}/>
             {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
             <span> {"                              "}</span>
-            <Button type="primary" onClick={()=> this.setState({ 
-              email: <Paragraph editable={{ onChange: this.onChangeEmail }}>{this.state.email}</Paragraph>, 
-              ID: <Paragraph editable={{ onChange: this.onChangeID }}>{this.state.ID}</Paragraph>, 
-              phno: <Paragraph editable={{ onChange: this.onChangePhno }}>{this.state.phno}</Paragraph>})} 
+            <Button type="primary" onClick={()=> nostate = ({ 
+              email: <Paragraph editable={{ onChange: this.onChangeEmail }}>{nostate.email}</Paragraph>, 
+              ID: <Paragraph editable={{ onChange: this.onChangeID }}>{nostate.ID}</Paragraph>, 
+              phno: <Paragraph editable={{ onChange: this.onChangePhno }}>{nostate.phno}</Paragraph>})} 
               style= {{marginLeft: 1000}}>Edit User</Button>
             <Descriptions title="John Doe" style= {{marginLeft: 60, marginTop: 10, fontSize: 35}}>
-              <Descriptions.Item label="Email address">{this.state.email}
+              <Descriptions.Item label="Email address">{nostate.email}
               </Descriptions.Item>
-              <Descriptions.Item label="Student ID">{this.state.ID}
+              <Descriptions.Item label="Student ID">{nostate.ID}
               </Descriptions.Item>
-              <Descriptions.Item label="Phone Number">{this.state.phno}
+              <Descriptions.Item label="Phone Number">{nostate.phno}
               </Descriptions.Item>
             </Descriptions>
           
@@ -76,6 +76,5 @@ onChangePhno = phno => {
       </Layout>
         );
     
-    }
 }
-export default profile;
+export default withAuthSync(Profile);

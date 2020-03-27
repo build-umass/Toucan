@@ -5,12 +5,13 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import SideBar from '../components/SideBar.js';
 import MyHeader from '../components/MyHeader.js';
+import { withAuthSync } from '../utils/auth';
 
 const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
 
-  export  default function Index() {
+  const Index =()=> {
 
 
     return (
@@ -35,3 +36,4 @@ const { SubMenu } = Menu;
     );
   }
 
+export default withAuthSync(Index);

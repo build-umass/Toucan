@@ -15,7 +15,7 @@ export  default function Login() {
     setUserData(Object.assign({}, userData, { error: '' }))
 
     const username = userData.username
-    const url = 'https://test-owl.herokuapp.com'
+    const url = '/api/login'
 
     try {
       const response = await fetch(url, {

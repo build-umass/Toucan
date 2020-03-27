@@ -5,8 +5,9 @@ import { useRouter } from 'next/router';
 import './signup.css'
 const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
+import cookie from 'js-cookie';
 
-  export  default function Login() {
+  export  default function Signup() {
 
     /*https://codesandbox.io/s/7vlew
       Source code for sign-up page from antd website, 
@@ -152,6 +153,7 @@ const { SubMenu } = Menu;
               type="primary" 
               htmlType="submit"
               className="button"
+              onClick={()=>cookie.set("session","user",{ expires: 3 })}
               style={{ width: '100px', background: "blue" }}>                     
               Register
             </Button>

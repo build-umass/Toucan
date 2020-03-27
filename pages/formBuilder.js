@@ -3,11 +3,12 @@ import MyHeader from '../components/MyHeader';
 import SideBar from '../components/SideBar';
 import '../node_modules/antd/dist/antd.css'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { withAuthSync } from '../utils/auth';
 
 const { Content, Footer } = Layout;
 
 
-export default function FormBuilder(){
+const FormBuilder = props =>{
     return(
         <Layout style={{ minHeight: '100vh' }}>
     
@@ -29,3 +30,4 @@ export default function FormBuilder(){
         );
     
 }
+export default withAuthSync(FormBuilder);

@@ -19,16 +19,16 @@ export default function SideBar(props){
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={[props.selected]} mode="inline">
-                <Menu.Item onClick = {()=> Router.push('/settings')} key="settings">
+                <Menu.Item onClick = {()=> Router.push('/settings')} key="1">
                 <Icon type="setting" />
                 <span>Settings</span>
                 </Menu.Item> 
             
-            <Menu.Item onClick = {()=> Router.push('/profile')} key="profile">
+            <Menu.Item onClick = {()=> Router.push('/profile')} key="2">
               <Icon type="user" />
               <span>Profile</span>
             </Menu.Item>
-            <Menu.Item onClick = {()=> Router.push('/members')} key="members">
+            <Menu.Item onClick = {()=> Router.push('/members')} key="3">
               <Icon type="team" />
               <span>Members</span>
             </Menu.Item>
@@ -42,8 +42,8 @@ export default function SideBar(props){
                 </span>
               }
             >
-              <Menu.Item key="6">Create Form</Menu.Item>
-              <Menu.Item key="8">Deploy Forms</Menu.Item>
+              <Menu.Item key="4">Create Form</Menu.Item>
+              <Menu.Item key="5">Deploy Forms</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>

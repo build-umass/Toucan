@@ -50,9 +50,9 @@ function FormBuilder(){
 
         <Layout style={{ minHeight: '100vh' }}>
         <Layout>
-        <MyHeader/>
+        <MyHeader pageName = "Form Builder" />
         <Layout>
-        <SideBar selected={4}/>
+        <SideBar selected={'formbuilder'}/>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>Form builder</Breadcrumb.Item>

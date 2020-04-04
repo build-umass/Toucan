@@ -210,9 +210,9 @@ class EditableTable extends React.Component {
       <Layout style={{ minHeight: '100vh' }}>
     
         <Layout>
-        <MyHeader/>
+        <MyHeader pageName = "Members" />
         <Layout>
-        <SideBar selected={3}/>
+        <SideBar selected={'members'}/>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item style={{ fontSize: 25}}>Members</Breadcrumb.Item>

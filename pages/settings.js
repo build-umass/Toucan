@@ -11,9 +11,9 @@ const Settings = (props) =>{
         <Layout style={{ minHeight: '100vh' }}>
     
         <Layout>
-        <MyHeader/>
+        <MyHeader pageName="Setttings"/>
         <Layout>
-        <SideBar selected={1} />
+        <SideBar selected={'settings'} />
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>Settings</Breadcrumb.Item>

@@ -96,10 +96,11 @@ const EditableCell = ({
   return <td {...restProps}>{childNode}</td>;
 };
 
-class EditableTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.columns = [
+
+
+
+function Members (props){
+ let columnFormat = [
       {
         title: 'Name',
         dataIndex: 'name',
@@ -122,14 +123,14 @@ class EditableTable extends React.Component {
         title: 'Delete',
         dataIndex: 'delete',
         render: (text, record) =>
-          this.state.dataSource.length >= 1 ? (
-            <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(record.key)}>
+          state.dataSource.length >= 1 ? (
+            <Popconfirm title="Sure to delete?" onConfirm={() => handleDelete(record.key)}>
               <a>Delete</a>
             </Popconfirm>
           ) : null,
       },
     ];
-    this.state = {
+     let [state, setState]= useState({
       dataSource: [
         {
           key: '0',
@@ -147,18 +148,18 @@ class EditableTable extends React.Component {
         },
       ],
       count: 2,
-    };
-  }
+    });
+  
 
-  handleDelete = key => {
-    const dataSource = [...this.state.dataSource];
-    this.setState({
+  let handleDelete = key => {
+    const dataSource = [...state.dataSource];
+    setState({
       dataSource: dataSource.filter(item => item.key !== key),
     });
   };
 
-  handleAdd = () => {
-    const { count, dataSource } = this.state;
+  let handleAdd = () => {
+    const { count, dataSource } = state;
     const newData = {
       key: count,
       name: `Edward King ${count}`,
@@ -166,31 +167,29 @@ class EditableTable extends React.Component {
       studentID: `1000000${count}`,
       phno: `990000000${count}`,
     };
-    this.setState({
+    setState({
       dataSource: [...dataSource, newData],
       count: count + 1,
     });
   };
 
-  handleSave = row => {
-    const newData = [...this.state.dataSource];
+  let handleSave = row => {
+    const newData = [...state.dataSource];
     const index = newData.findIndex(item => row.key === item.key);
     const item = newData[index];
     newData.splice(index, 1, { ...item, ...row });
-    this.setState({
+    setState({
       dataSource: newData,
     });
   };
-
-  render() {
-    const { dataSource } = this.state;
+    const { dataSource } = state;
     const components = {
       body: {
         row: EditableRow,
         cell: EditableCell,
       },
     };
-    const columns = this.columns.map(col => {
+    let columns = columnFormat.map(col => {
       if (!col.editable) {
         return col;
       }
@@ -202,51 +201,41 @@ class EditableTable extends React.Component {
           editable: col.editable,
           dataIndex: col.dataIndex,
           title: col.title,
-          handleSave: this.handleSave,
+          handleSave: handleSave,
         }),
       };
     });
     return (
       <Layout style={{ minHeight: '100vh' }}>
-    
-        <Layout>
-        <MyHeader pageName = "Members" />
-        <Layout>
-        <SideBar selected={'members'}/>
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item style={{ fontSize: 25}}>Members</Breadcrumb.Item>
-            </Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-            <div>
-            <Button
-          onClick={this.handleAdd}
-          type="primary"
-          style={{
-            marginBottom: 16,
-            // marginLeft: '80%',
-          }}
-        >
-          Add a row
-        </Button>
-        <Table
-          components={components}
-          rowClassName={() => 'editable-row'}
-          bordered
-          dataSource={dataSource}
-          columns={columns}
-        />
-        </div>
-            </div>
+          <MyHeader pageName = "Members" />
+            <Layout>
+              <SideBar selected={'members'}/>
+              <Content style={{ margin: '0 16px' }}>
+                <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+                  <div>
+                    <Button
+                    onClick={handleAdd}
+                    type="primary"
+                    style={{marginBottom: 16,}}>
+                    Add a row
+                    </Button>
+                 <Table
+                    components={components}
+                    rowClassName={() => 'editable-row'}
+                    bordered
+                    dataSource={dataSource}
+                    columns={columns}
+                  />
+                  </div>
+                </div>
           </Content>
           </Layout>
           <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
-        </Layout>
     
       </Layout>
         );
     
-  }
+  
 }
-export default EditableTable;
+export default withAuthSync(Members);
 

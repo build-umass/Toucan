@@ -11,17 +11,16 @@ const Settings = (props) =>{
         <Layout style={{ minHeight: '100vh' }}>
     
         <Layout>
-        <MyHeader pageName="Setttings"/>
+        <MyHeader pageName="Settings"/>
         <Layout>
         <SideBar selected={'settings'} />
+        <Layout>
           <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Settings</Breadcrumb.Item>
-            </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Settings page.</div>
           </Content>
-          </Layout>
           <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
+          </Layout>
+          </Layout>
         </Layout>
     
       </Layout>

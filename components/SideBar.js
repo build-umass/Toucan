@@ -9,17 +9,10 @@ const { SubMenu } = Menu;
 
 
 export default function SideBar(props){
-
-    const [collapsed,setCollapsed] = useState(false)
-    function  onCollapse (collapsed){
-      console.log(collapsed);
-      setCollapsed(collapsed);
-    };
-
     return(
-    <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
+    <Sider theme = "light" >
           <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={[props.selected]} mode="inline">
+          <Menu defaultSelectedKeys={[props.selected]} mode="inline">
                 <Menu.Item onClick = {()=> Router.push('/settings')} key="settings">
 
                 {/* <Icon type="setting" /> */}

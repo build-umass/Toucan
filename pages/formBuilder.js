@@ -53,10 +53,9 @@ function FormBuilder(){
         <MyHeader pageName = "Form Builder" />
         <Layout>
         <SideBar selected={'formbuilder'}/>
+        <Layout>
           <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Form builder</Breadcrumb.Item>
-            </Breadcrumb>
+         
             <div style={{ padding: 20, background: '#fff', minHeight: 360, fontSize: "2em"}}>
               {questionsArr}
               <div style={{ display: "flex", justifyContent: "center"}}>
@@ -65,8 +64,9 @@ function FormBuilder(){
               </div>
             </div>
           </Content>
-          </Layout>
           <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
+          </Layout>
+          </Layout>
 
         </Layout>
     

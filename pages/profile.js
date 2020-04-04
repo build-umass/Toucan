@@ -47,6 +47,7 @@ const onChangePhno = newPhno => {
         <MyHeader pageName = "Profile"/>
         <Layout>
         <SideBar selected={'profile'}/>
+        <Layout>
           <Content style={{ margin: 'auto' }}>
             
             <div style={{padding:'3%', background: '#fff', width: '100%',    }}>
@@ -60,7 +61,7 @@ const onChangePhno = newPhno => {
               email: <Paragraph editable={{ onChange: onChangeEmail }}>{profileInfo.email}</Paragraph>, 
               ID: <Paragraph editable={{ onChange: onChangeID }}>{profileInfo.ID}</Paragraph>, 
               phno: <Paragraph editable={{ onChange: onChangePhno }}>{profileInfo.phno}</Paragraph>})} 
-              style= {{marginLeft: 1000}}>Edit User</Button>
+              style= {{marginLeft: '80%'}}>Edit User</Button>
                                                                    
             <Descriptions title="John Doe" style= {{marginLeft: 60, marginTop: 10, fontSize: 35}}>
               <Descriptions.Item label="Email address">{profileInfo.email}
@@ -73,8 +74,9 @@ const onChangePhno = newPhno => {
           
             </div>
           </Content>
-          </Layout>
           <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
+          </Layout>
+          </Layout>
         </Layout>
     
       </Layout>

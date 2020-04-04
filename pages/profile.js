@@ -15,7 +15,7 @@ const { Content, Footer } = Layout;
 
 
 
-const  Profile = props =>{
+function  Profile(props){
 
 
 let [profileInfo, changeProfileInfo] = useState(

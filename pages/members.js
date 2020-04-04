@@ -11,7 +11,7 @@ import SideBar from '../components/SideBar';
 import { withAuthSync } from '../utils/auth';
 import '../node_modules/antd/dist/antd.css'
 
-import '../node_modules/antd/dist/antd.css';
+import '../node_modules/antd/dist/antd.css';   
 
 
 const EditableContext = React.createContext();

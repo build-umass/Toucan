@@ -29,11 +29,9 @@ export default function SideBar(props){
             
 
             <Menu.Item onClick = {()=> Router.push('/profile')} key="profile">
-              </*Icon type="user" /*/>
               <span>Profile</span>
             </Menu.Item>
             <Menu.Item onClick = {()=> Router.push('/members')} key="members">
-              </*Icon type="team" /*/>
               <span>Members</span>
             </Menu.Item>
             <SubMenu

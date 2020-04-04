@@ -13,7 +13,7 @@ const Settings = (props) =>{
         <Layout>
         <MyHeader/>
         <Layout>
-        <SideBar selected={1} />
+        <SideBar selected={'settings'} />
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>Settings</Breadcrumb.Item>

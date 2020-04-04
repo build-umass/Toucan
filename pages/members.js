@@ -15,7 +15,7 @@ const Members=()=> {
         <Layout>
         <MyHeader/>
         <Layout>
-        <SideBar selected={3}/>
+        <SideBar selected={'members'}/>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item>Members</Breadcrumb.Item>

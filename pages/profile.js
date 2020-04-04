@@ -46,7 +46,7 @@ const onChangePhno = newPhno => {
         <Layout>
         <MyHeader/>
         <Layout>
-        <SideBar selected={2}/>
+        <SideBar selected={'profile'}/>
           <Content style={{ margin: 'auto' }}>
             
             <div style={{padding:'3%', background: '#fff', width: '100%',    }}>

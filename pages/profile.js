@@ -54,11 +54,14 @@ const onChangePhno = newPhno => {
             <Avatar size={200} style = {{}}icon={<UserOutlined />}/>
             {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
             <span> {"                              "}</span>
+
+
             <Button type="primary" onClick={()=> changeProfileInfo({ 
               email: <Paragraph editable={{ onChange: onChangeEmail }}>{profileInfo.email}</Paragraph>, 
               ID: <Paragraph editable={{ onChange: onChangeID }}>{profileInfo.ID}</Paragraph>, 
               phno: <Paragraph editable={{ onChange: onChangePhno }}>{profileInfo.phno}</Paragraph>})} 
               style= {{marginLeft: 1000}}>Edit User</Button>
+                                                                   
             <Descriptions title="John Doe" style= {{marginLeft: 60, marginTop: 10, fontSize: 35}}>
               <Descriptions.Item label="Email address">{profileInfo.email}
               </Descriptions.Item>

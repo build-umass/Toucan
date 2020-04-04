@@ -57,7 +57,7 @@ onChangePhno = phno => {
               email: <Paragraph editable={{ onChange: this.onChangeEmail }}>{this.state.email}</Paragraph>, 
               ID: <Paragraph editable={{ onChange: this.onChangeID }}>{this.state.ID}</Paragraph>, 
               phno: <Paragraph editable={{ onChange: this.onChangePhno }}>{this.state.phno}</Paragraph>})} 
-              style= {{marginLeft: 1000}}>Edit User</Button>
+              style= {{marginLeft: '80%'}}>Edit User</Button>
             <Descriptions title="John Doe" style= {{marginLeft: 60, marginTop: 10, fontSize: 35}}>
               <Descriptions.Item label="Email address">{this.state.email}
               </Descriptions.Item>

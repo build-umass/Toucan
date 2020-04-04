@@ -1,4 +1,4 @@
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, } from 'antd'; //add icon
 import React, {useState} from 'react';
 import Router from 'next/router';
 
@@ -20,12 +20,12 @@ export default function SideBar(props){
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={[props.selected]} mode="inline">
                 <Menu.Item onClick = {()=> Router.push('/settings')} key="1">
-                <Icon type="setting" />
+                {/* <Icon type="setting" /> */}
                 <span>Settings</span>
                 </Menu.Item>
             
             <Menu.Item onClick = {()=> Router.push('/profile')} key="2">
-              <Icon type="user" />
+              {/* <Icon type="user" /> */}
               <span>Profile</span>
             </Menu.Item>
             <SubMenu
@@ -33,7 +33,7 @@ export default function SideBar(props){
               onClick={()=>Router.push('/members')}
               title={
                 <span>
-                  <Icon type="team" />
+                  {/* <Icon type="team" /> */}
                   <span>Members</span>
                 </span>
               }
@@ -47,7 +47,7 @@ export default function SideBar(props){
               onClick = {()=> Router.push('/formBuilder')}
               title={
                 <span>
-                  <Icon type="form" />
+                  {/* <Icon type="form" /> */}
                   <span>Form Builder</span>
                 </span>
               }

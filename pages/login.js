@@ -1,12 +1,53 @@
-import { Form, Icon, Input, Checkbox, Button, Layout, Menu, } from 'antd';
+import { Form, Icon, Input, Checkbox, Button, Layout, Menu} from 'antd';
 import '../node_modules/antd/dist/antd.css'
+
 import React, {useState} from 'react';
-import { useRouter } from 'next/router';
+import { login } from '../utils/auth'
+
 const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
+
 export  default function Login() {
 
+  const [userData, setUserData] = useState({ username: '', error: '' })
+
+  const handleSubmit = async event => {
+    event.preventDefault()
+    setUserData(Object.assign({}, userData, { error: '' }))
+
+    const username = userData.username
+    const url = '/api/login'
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username }),
+      })
+      if (response.status === 200) {
+        const { token } = await response.json()
+        await login({ token })
+      } else {
+        console.log('Login failed.')
+        let error = new Error(response.statusText)
+        error.response = response
+        throw error
+      }
+    } catch (error) {
+      console.error(
+        'You have an error in your code or there are Network issues.',
+        error
+      )
+
+      const { response } = error
+      setUserData(
+        Object.assign({}, userData, {
+          error: response ? response.statusText : error.message,
+        })
+      )
+    }
+  }
       /*TODO:
         Create login page. Use ant design components as much as possible.
         Don't worry about routing or setting up actual working login, just make it look good.
@@ -51,6 +92,11 @@ export  default function Login() {
             rules={[{ required: true, message: 'Please input your Username!' }]}
             >
             <Input 
+              onChange = {event =>
+              setUserData(
+                Object.assign({}, userData, { username: event.target.value })
+              )
+              }
               placeholder="Username" 
               prefix={<Icon type="user" style={{ fontSize: 15 }} />}
               style={{ width: '300px' }}
@@ -82,6 +128,7 @@ export  default function Login() {
               </a>
             </Form.Item>
             <Button 
+              onClick={handleSubmit}
               type="primary" 
               htmlType="submit" 
               style={{ width: '100px', marginLeft: "100px", background: "blue" }}>

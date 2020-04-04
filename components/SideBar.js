@@ -19,29 +19,21 @@ export default function SideBar(props){
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={[props.selected]} mode="inline">
-                <Menu.Item onClick = {()=> Router.push('/settings')} key="1">
+                <Menu.Item onClick = {()=> Router.push('/settings')} key="settings">
                 {/* <Icon type="setting" /> */}
+
                 <span>Settings</span>
-                </Menu.Item>
+                </Menu.Item> 
             
-            <Menu.Item onClick = {()=> Router.push('/profile')} key="2">
-              {/* <Icon type="user" /> */}
+
+            <Menu.Item onClick = {()=> Router.push('/profile')} key="profile">
+              </*Icon type="user" /*/>
               <span>Profile</span>
             </Menu.Item>
-            <SubMenu
-              key="sub1"
-              onClick={()=>Router.push('/members')}
-              title={
-                <span>
-                  {/* <Icon type="team" /> */}
-                  <span>Members</span>
-                </span>
-              }
-              
-            >
-              <Menu.Item key="3" onClick = {()=>{console.log('outshmea')}}>Edit Members</Menu.Item>
-              <Menu.Item key="4">View Members</Menu.Item>
-            </SubMenu>
+            <Menu.Item onClick = {()=> Router.push('/members')} key="members">
+              </*Icon type="team" /*/>
+              <span>Members</span>
+            </Menu.Item>
             <SubMenu
               key="sub2"
               onClick = {()=> Router.push('/formBuilder')}
@@ -52,8 +44,8 @@ export default function SideBar(props){
                 </span>
               }
             >
-              <Menu.Item key="6">Create Form</Menu.Item>
-              <Menu.Item key="8">Deploy Forms</Menu.Item>
+              <Menu.Item key="4">Create Form</Menu.Item>
+              <Menu.Item key="5">Deploy Forms</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>

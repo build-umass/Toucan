@@ -1,11 +1,16 @@
+
 import React, {useContext, useState, useEffect, useRef} from 'react';
 import { Layout, Menu, Breadcrumb, Icon, Button } from 'antd';
+
 const { Content, Footer } = Layout;
 import { Table, Input, InputNumber, Popconfirm, Form } from 'antd';
 
 
 import MyHeader from '../components/MyHeader';
 import SideBar from '../components/SideBar';
+import { withAuthSync } from '../utils/auth';
+import '../node_modules/antd/dist/antd.css'
+
 import '../node_modules/antd/dist/antd.css';
 
 
@@ -244,3 +249,4 @@ class EditableTable extends React.Component {
   }
 }
 export default EditableTable;
+

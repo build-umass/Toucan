@@ -1,4 +1,4 @@
-import {  Form, Icon, Menu, Input, Layout, Tooltip, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete,} from 'antd';
+import {  Form, Menu, Input, Layout, Tooltip, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete,} from 'antd';
 import '../node_modules/antd/dist/antd.css'
 import React, {useState} from 'react';
 import { useRouter } from 'next/router';

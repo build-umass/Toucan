@@ -1,6 +1,6 @@
-import { Form, Icon, Input, Checkbox, Button, Layout, Menu} from 'antd';
+import { Form, Input, Checkbox, Button, Layout, Menu} from 'antd';
 import '../node_modules/antd/dist/antd.css'
-
+import {UserOutlined, LockOutlined} from '@ant-design/icons';
 import React, {useState} from 'react';
 import { login } from '../utils/auth'
 
@@ -98,7 +98,7 @@ export  default function Login() {
               )
               }
               placeholder="Username" 
-              prefix={<Icon type="user" style={{ fontSize: 15 }} />}
+              prefix={<UserOutlined />}
               style={{ width: '300px' }}
             />
           </Form.Item>
@@ -109,7 +109,7 @@ export  default function Login() {
             >
             <Input.Password 
               placeholder="Password" 
-              prefix={<Icon type="lock" style={{ fontSize: 15 }} />}
+              prefix={<LockOutlined />}
               style={{ width: '300px' }}
             />
           </Form.Item>

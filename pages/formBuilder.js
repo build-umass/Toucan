@@ -50,7 +50,7 @@ function FormBuilder(){
 
         <Layout style={{ minHeight: '100vh' }}>
         <Layout>
-        <MyHeader/>
+        <MyHeader pageName = "Form Builder" />
         <Layout>
         <SideBar selected={'formbuilder'}/>
           <Content style={{ margin: '0 16px' }}>

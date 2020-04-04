@@ -13,7 +13,7 @@ const Members=()=> {
         <Layout style={{ minHeight: '100vh' }}>
     
         <Layout>
-        <MyHeader/>
+        <MyHeader pageName = "Members" />
         <Layout>
         <SideBar selected={'members'}/>
           <Content style={{ margin: '0 16px' }}>

@@ -11,7 +11,7 @@ const Settings = (props) =>{
         <Layout style={{ minHeight: '100vh' }}>
     
         <Layout>
-        <MyHeader/>
+        <MyHeader pageName="Setttings"/>
         <Layout>
         <SideBar selected={'settings'} />
           <Content style={{ margin: '0 16px' }}>

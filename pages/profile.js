@@ -44,7 +44,7 @@ const onChangePhno = newPhno => {
         <Layout style={{ minHeight: '100vh' }}>
     
         <Layout>
-        <MyHeader/>
+        <MyHeader pageName = "Profile"/>
         <Layout>
         <SideBar selected={'profile'}/>
           <Content style={{ margin: 'auto' }}>

@@ -44,15 +44,12 @@ import cookie from 'js-cookie';
 
         <img src="buildIcon.jpg" title="Build Logo" style={{ margin: '15px auto 15px auto', width: '200px', height: '200px', padding: "0px" }}/>
   
-        <h1 style={{ 
-          fontSize: "40px",   
-          color: "#fff",
-          fontFamily: "Arvo",
+        <h1 style={{
+          margin: "10px, auto, 10px, auto", 
+          fontSize: "60px",   
+          fontFamily: "Arial, Times, Times New Roman, Arvo",
           fontWeight: "bold",
           color: "#222",
-          textShadow: 
-          "4px 4px 0px #f5f5f5, 7px 7px 0px rgba(0, 0, 0, 0.2)",
-          letterSpacing: "0.1em",
           textAlign: "center"}}>
           Build UMass
         </h1>

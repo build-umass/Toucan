@@ -70,14 +70,9 @@ export  default function Login() {
         <h1 style={{
           margin: "10px, auto, 10px, auto", 
           fontSize: "60px",   
-          color: "#fff",
-          fontFamily: "Arvo",
+          fontFamily: "Arial, Times, Times New Roman, Arvo",
           fontWeight: "bold",
           color: "#222",
-          textShadow: 
-          "4px 4px 0px #f5f5f5, 7px 7px 0px rgba(0, 0, 0, 0.2)",
-          letterSpacing: "0.1em",
-          letterSpacing: "0.1em",
           textAlign: "center"}}>
           Build UMass
         </h1>

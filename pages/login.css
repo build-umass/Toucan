@@ -24,3 +24,14 @@
     background-size: cover;
 }
 
+.ant-row .ant-form-item-required {
+    color: white;
+}
+
+.ant-row .ant-form-item-required::before {
+    color: white !important;
+}
+
+.ant-col .ant-form-item-explain {
+    color: white;
+}

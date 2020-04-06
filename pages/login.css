@@ -3,7 +3,7 @@
     overflow: hidden;
     min-Height: 100vh;
 }
-
+/* You could use :after - it doesn't really matter */
 .container:before {
     content: ' ';
     display: block;
@@ -24,30 +24,3 @@
     background-size: cover;
 }
 
-.ant-row .ant-form-item-required {
-    color: white;
-}
-
-.ant-row .ant-form-item-required::before {
-    color: white !important;
-}
-
-.ant-col .ant-form-item-explain {
-    color: white;
-}
-
-.boxes {
-    right: 60px;
-}
-
-@media only screen and (max-width: 575px) {
-    .boxes {
-        right: -50px;
-    }
-    .checkbox{
-        margin-left: 25px;
-    }
-    .button {
-        margin-left: 75px;
-    }
-}

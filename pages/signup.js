@@ -2,7 +2,7 @@ import {  Form, Menu, Input, Layout, Tooltip, Cascader, Select, Row, Col, Checkb
 import '../node_modules/antd/dist/antd.css'
 import React, {useState} from 'react';
 import { useRouter } from 'next/router';
-import './signup.css'
+import './signup.css';
 const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
 import cookie from 'js-cookie';
@@ -40,30 +40,33 @@ import cookie from 'js-cookie';
 
     return (
 
-      <Layout style={{ minHeight: '100vh' }}>
-
-        <img src="buildIcon.jpg" title="Build Logo" style={{ margin: '15px auto 15px auto', width: '200px', height: '200px', padding: "0px" }}/>
+      <Layout className = 'container' style={{ minHeight: '100vh' }}>
   
         <h1 style={{
-          margin: "10px, auto, 10px, auto", 
-          fontSize: "60px",   
-          fontFamily: "Arial, Times, Times New Roman, Arvo",
-          fontWeight: "bold",
-          color: "#222",
-          textAlign: "center"}}>
+          marginTop: '5%',
+          marginBottom:'2.5%',
+          fontSize: '60px',   
+          fontFamily: 'Arial, Times, Times New Roman, Arvo',
+          fontWeight: 'bold',
+          color: 'white',
+          textAlign: 'center',
+          textShadow: '2px 0 black',
+          opacity: 1,
+          zIndex: 1,}}>
           Build UMass
         </h1>
 
         <Form
           {...formItemLayout}
-          layout= "horizontal"
-          className="boxes"
-          style={{position: "relative", margin: "auto"}}
+          layout= 'horizontal'
+          className='boxes'
+          style={{position: 'relative', margin: 'auto', marginTop: '0%'}}
         >
 
           <Form.Item
-            name="email"
-            label="E-mail"
+            name='email'
+            label='E-mail'
+            style={{color: 'white', fontSize: '5px'}}
             rules={[
             {
               type: 'email',
@@ -76,14 +79,14 @@ import cookie from 'js-cookie';
             ]}
           >
             <Input 
-              placeholder="E-mail" 
-              style = {{width: '250px' }}
+              placeholder='E-mail' 
+              style = {{width: '270px', border: '1px solid black' }}
             />
           </Form.Item>
 
           <Form.Item
-              name="password"
-              label="Password"
+              name='password'
+              label='Password'
               rules={[
               {
                   required: true,
@@ -93,14 +96,14 @@ import cookie from 'js-cookie';
               hasFeedback
           >
               <Input.Password 
-                placeholder="Password" 
-                style={{ width: '250px' }} 
+                placeholder='Password' 
+                style={{ width: '270px', border: '1px solid black' }} 
               />
           </Form.Item>
 
           <Form.Item
-              name="confirm"
-              label="Confirm Password"
+              name='confirm'
+              label='Confirm Password'
               dependencies={['password']}
               hasFeedback
               rules={[
@@ -113,45 +116,46 @@ import cookie from 'js-cookie';
                   if (!value || getFieldValue('password') === value) {
                       return Promise.resolve();
                   }
-                  return Promise.reject('The two passwords that you entered do not match!');
+                  return Promise.reject('The two passwords do not match!');
                   },
               }),
               ]}
           >
               <Input.Password 
-                placeholder="Confirm Password" 
-                style={{ width: '250px' }} 
+                placeholder='Confirm Password' 
+                style={{ width: '270px', border: '1px solid black'}}
               />
           </Form.Item>
 
           <Form.Item
-            name="phone"
-            label="Phone Number"
+            name='phone'
+            label='Phone Number'
             rules={[{ required: true, message: 'Please input your phone number!' }]}
+            style={{color: 'white' }}
           >
               <Input 
-                placeholder="Phone Number" 
-                style={{ width: '250px' }} 
+                placeholder='Phone Number' 
+                style={{ width: '270px', border: '1px solid black'}} 
               />
           </Form.Item>
 
           <Form.Item 
-            name="agreement" 
+            name='agreement' 
             {...tailFormItemLayout}
-            className="checkbox"
+            className='checkbox'
             >
-            <Checkbox> 
-              I have read the <a href="">agreement</a>
+            <Checkbox style={{color: 'white', fontSize: '1em'}}> 
+              I have read the <a href='' style={{color: 'cyan'}}>agreement</a>
             </Checkbox>
           </Form.Item>
 
           <Form.Item {...tailFormItemLayout}>
             <Button 
-              type="primary" 
-              htmlType="submit"
-              className="button"
-              onClick={()=>cookie.set("session","user",{ expires: 3 })}
-              style={{ width: '100px', background: "blue" }}>                     
+              type='primary' 
+              htmlType='submit'
+              className='button'
+              onClick={()=>cookie.set('session','user',{ expires: 3 })}
+              style={{ width: '100px', background: 'white', color: 'black', border: '1px solid black' }}>                     
               Register
             </Button>
           </Form.Item>

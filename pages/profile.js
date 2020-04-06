@@ -1,5 +1,5 @@
 import MyHeader from '../components/MyHeader';
-import { Layout, Breadcrumb} from 'antd';
+import { Layout, Breadcrumb } from 'antd';
 import SideBar from '../components/SideBar';
 import '../node_modules/antd/dist/antd.css'
 import { Avatar } from 'antd';
@@ -7,81 +7,99 @@ import { withAuthSync } from '../utils/auth'
 import { UserOutlined } from '@ant-design/icons';
 import { Descriptions } from 'antd';
 import { Typography } from 'antd';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Button } from 'antd';
+import './profile.css';
 const { Paragraph } = Typography;
 const { Content, Footer } = Layout;
 
+//Should ID be editable?  ID: <Paragraph editable={{ onChange: onChangeID }}>{profileInfo.ID}</Paragraph>, 
+function Profile() {
 
+  let [profileInfo, changeProfileInfo] = useState({
+    email: 'johndoe@umass.edu',
+    ID: '12345678',
+    phone: '1234567890'
+  });
+  let [edit, setEdit] = useState(false);
+  function onChangeEmail(newEmail) {
+    //TODO: Save to database
+    changeProfileInfo({ ...profileInfo, email: newEmail });
+  };
 
+  const onChangeID = newID => {
+    //TODO: Save to database
+    changeProfileInfo({ ...profileInfo, ID: newID });
+  };
 
-function  Profile(props){
+  const onChangePhone = newPhone => {
+    //TODO: Save to database
+    changeProfileInfo({ ...profileInfo, phone: newPhone });
+  };
 
-let [editing, changeEditing]= useState(false);
+  let button = <Button type="primary" onClick={() => { setEdit(true); }} style={{ display: 'relative', marginTop: '10px', width: '100px' }}>
+    Edit User
+                 </Button>;
 
-let [profileInfo, changeProfileInfo] = useState(
-  {email: 'johndoe@umass.edu',
-  ID: '12345678',
-  phone: '1234567890'
-});
+  if (edit) {
+    button = <Button type="primary" onClick={() => { setEdit(false); }} style={{ display: 'relative', marginTop: '10px', width: '100px' }}>
+      Save
+               </Button>;
+  }
 
-function onChangeEmail(newEmail) {
-  //TODO: Save to database
-  changeProfileInfo({...profileInfo, email: newEmail});
-};
+  let descriptions = edit ?
 
+    <Descriptions title="John Doe" style={{ marginTop: 10 }}>
+      <Descriptions.Item label="Email address" >
+        <Paragraph editable={{ onChange: onChangeEmail }} style={{ marginTop: '10px', marginLeft: '10px' }}>{profileInfo.email}</Paragraph>
+      </Descriptions.Item>
+      <Descriptions.Item label="Phone Number">
+        <Paragraph editable={{ onChange: onChangePhone }} style={{ marginTop: '10px', marginLeft: '10px' }}>{profileInfo.phone}</Paragraph>
+      </Descriptions.Item>
+      <Descriptions.Item label="Student ID">{profileInfo.ID}
+      </Descriptions.Item>
+    </Descriptions>
 
-const onChangeID = newID => {
-  //TODO: Save to database
-  changeProfileInfo({...profileInfo, ID: newID});
-};
+    : <Descriptions title="John Doe" style={{ marginTop: 20 }}>
+      <Descriptions.Item label="Email address">{profileInfo.email}
+      </Descriptions.Item>
+      <Descriptions.Item label="Phone Number">{profileInfo.phone}
+      </Descriptions.Item>
+      <Descriptions.Item label="Student ID">{profileInfo.ID}
+      </Descriptions.Item>
+    </Descriptions>
 
-const onChangePhno = newPhno => {
-  //TODO: Save to database
-  changeProfileInfo({...profileInfo, phno: newPhno});
-  
-};
-       return(
-        <Layout style={{ minHeight: '100vh' }}>
-    
+  return (
+    <Layout style={{ minHeight: '100vh', margin: 'auto', textAlgin: 'center' }}>
+
+      <Layout>
+        <MyHeader pageName="Profile" />
         <Layout>
-        <MyHeader pageName = "Profile"/>
-        <Layout>
-        <SideBar selected={'profile'}/>
-        <Layout>
-          <Content style={{ margin: 'auto' }}>
-            
-            <div style={{padding:'3%', background: '#fff', width: '100%',    }}>
-            
-            <Avatar size={200} style = {{}}icon={<UserOutlined />}/>
-            {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
-            <span> {"                              "}</span>
+          <SideBar selected={'profile'} />
+          <Layout>
+            <Content style={{ margin: 'auto', alignItems: 'center' }}>
 
+              <div style={{ padding: '3%', textAlign: 'center', background: '#fff', width: '100%', alignItems: "center", margin: "auto" }}>
 
-            <Button type="primary" onClick={editing? ()=>changeEditing(false) : ()=> changeProfileInfo({ 
-              email: <Paragraph editable={{ onChange: onChangeEmail }}>{profileInfo.email}</Paragraph>, 
-              ID: <Paragraph editable={{ onChange: onChangeID }}>{profileInfo.ID}</Paragraph>, 
-              phno: <Paragraph editable={{ onChange: onChangePhno }}>{profileInfo.phno}</Paragraph>})} 
-              style= {{marginLeft: '80%'}}>Edit User</Button>
-                                                                   
-            <Descriptions title="John Doe" style= {{marginLeft: 60, marginTop: 10, fontSize: 35}}>
-              <Descriptions.Item label="Email address">{profileInfo.email}
-              </Descriptions.Item>
-              <Descriptions.Item label="Student ID">{profileInfo.ID}
-              </Descriptions.Item>
-              <Descriptions.Item label="Phone Number">{profileInfo.phno}
-              </Descriptions.Item>
-            </Descriptions>
-          
-            </div>
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
-          </Layout>
+                <div>
+                  <Avatar size={200} style={{ margin: 'auto', display: 'inline-block' }} icon={<UserOutlined />} />
+                  {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
+                  <span> {"                              "}</span>
+                </div>
+
+                {button}
+
+                {descriptions}
+
+              </div>
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
           </Layout>
         </Layout>
-    
       </Layout>
-        );
-    
+
+    </Layout>
+  );
+
 }
-export default withAuthSync(Profile);
+export default withAuthSync(Profile)

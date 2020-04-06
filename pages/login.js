@@ -3,7 +3,7 @@ import '../node_modules/antd/dist/antd.css'
 import {UserOutlined, LockOutlined} from '@ant-design/icons';
 import React, {useState} from 'react';
 import { login } from '../utils/auth'
-import './login.css';
+import './css/login.css';
 
 
 export  default function Login() {

@@ -9,7 +9,7 @@ import { Descriptions } from 'antd';
 import { Typography } from 'antd';
 import React, { useState } from 'react';
 import { Button } from 'antd';
-import './profile.css';
+import './css/profile.css';
 const { Paragraph } = Typography;
 const { Content, Footer } = Layout;
 

@@ -1,7 +1,7 @@
 import { Layout, Menu, } from 'antd'; //add icon
 import React, {useState} from 'react';
 import Router from 'next/router';
-
+import './componentcss/sidebar.css';
 const {Sider } = Layout;
 const { SubMenu } = Menu;
 

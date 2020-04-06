@@ -210,27 +210,29 @@ function Members(props) {
       <MyHeader pageName="Members" />
       <Layout>
         <SideBar selected={'members'} />
-        <Content style={{ margin: '0 16px' }}>
-          <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-            <div>
-              <Button
-                onClick={handleAdd}
-                type="primary"
-                style={{ marginBottom: 16, }}>
-                Add a row
+        <Layout>
+          <Content style={{ margin: '0 16px' }}>
+            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+              <div>
+                <Button
+                  onClick={handleAdd}
+                  type="primary"
+                  style={{ marginBottom: 16, }}>
+                  Add a row
                     </Button>
-              <Table
-                components={components}
-                rowClassName={() => 'editable-row'}
-                bordered
-                dataSource={dataSource}
-                columns={columns}
-              />
+                <Table
+                  components={components}
+                  rowClassName={() => 'editable-row'}
+                  bordered
+                  dataSource={dataSource}
+                  columns={columns}
+                />
+              </div>
             </div>
-          </div>
-        </Content>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
+        </Layout>
       </Layout>
-      <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
 
     </Layout>
   );

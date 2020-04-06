@@ -2,7 +2,7 @@ import { Form, Menu, Input, Layout, Tooltip, Cascader, Select, Row, Col, Checkbo
 import '../node_modules/antd/dist/antd.css'
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import './signup.css';
+import './css/signup.css';
 const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
 import cookie from 'js-cookie';

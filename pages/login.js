@@ -3,7 +3,7 @@ import '../node_modules/antd/dist/antd.css'
 import {UserOutlined, LockOutlined} from '@ant-design/icons';
 import React, {useState} from 'react';
 import { login } from '../utils/auth'
-
+import './login.css';
 const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
@@ -63,27 +63,28 @@ export  default function Login() {
     */
 
     return (
-      <Layout style={{ minHeight: '100vh' }}>
-
-        <img src="buildIcon.jpg" title="Build Logo" style={{ margin: '15px auto 15px auto', width: '200px', height: '200px', padding: "0px" }}/>
+      <Layout className = 'container'>
   
         <h1 style={{
-          margin: "10px, auto, 10px, auto", 
-          fontSize: "60px",   
-          fontFamily: "Arial, Times, Times New Roman, Arvo",
-          fontWeight: "bold",
-          color: "#222",
-          textAlign: "center"}}>
+          marginTop: '10%',
+          fontSize: '60px',   
+          fontFamily: 'Arial, Times, Times New Roman, Arvo',
+          fontWeight: 'bold',
+          color: 'white',
+          textAlign: 'center',
+          opacity: 1,
+          zIndex: 1,
+          textShadow: '2px 0 black'}}>
           Build UMass
         </h1>
 
         <Form
-          name="normal_login"
+          name='normal_login'
           style={{ margin: 'auto', marginTop: '5px' }}
         >
 
           <Form.Item
-            name="username"
+            name='username'
             rules={[{ required: true, message: 'Please input your Username!' }]}
             >
             <Input 
@@ -92,41 +93,41 @@ export  default function Login() {
                 Object.assign({}, userData, { username: event.target.value })
               )
               }
-              placeholder="Username" 
+              placeholder='Username' 
               prefix={<UserOutlined />}
-              style={{ width: '300px' }}
+              style={{ width: '300px', border: '1px solid black' }}
             />
           </Form.Item>
 
           <Form.Item
-            name="password"
+            name='password'
             rules={[{ required: true, message: 'Please input your Username!' }]}
             >
             <Input.Password 
-              placeholder="Password" 
+              placeholder='Password' 
               prefix={<LockOutlined />}
-              style={{ width: '300px' }}
+              style={{ width: '300px', border: '1px solid black' }}
             />
           </Form.Item>
 
           <Form.Item>
             <Form.Item 
-              name="remember"
+              name='remember'
             >
               <Checkbox 
-                style={{float: 'left'}}>
+                style={{float: 'left', color: 'white' }}>
                 Remember me
               </Checkbox>
-              <a href=""
-                  style = {{float: 'right'}}href="">
+              <a href=''
+                  style = {{float: 'right', color: 'white' }}>
                   Forgot password
               </a>
             </Form.Item>
             <Button 
               onClick={handleSubmit}
-              type="primary" 
-              htmlType="submit" 
-              style={{ width: '100px', marginLeft: "100px", background: "blue" }}>
+              type='primary' 
+              htmlType='submit' 
+              style={{ width: '100px', marginLeft: '100px', background: 'white', color: 'black', border: '1px solid black'}}>
               Log in
             </Button>
           </Form.Item>

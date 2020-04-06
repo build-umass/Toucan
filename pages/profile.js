@@ -7,9 +7,9 @@ import { withAuthSync } from '../utils/auth'
 import { UserOutlined } from '@ant-design/icons';
 import { Descriptions } from 'antd';
 import { Typography } from 'antd';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Button } from 'antd';
-import './description.css';
+import './profile.css';
 const { Paragraph } = Typography;
 const { Content, Footer } = Layout;
 
@@ -37,13 +37,13 @@ const { Content, Footer } = Layout;
       changeProfileInfo({...profileInfo, phone: newPhone});
     };
 
-    let button = <Button type="primary" onClick={()=> {setEdit(true);}} style= {{display:'relative', marginTop: '10px'}}>
+    let button = <Button type="primary" onClick={()=> {setEdit(true);}} style= {{display:'relative', marginTop: '10px', width: '100px'}}>
                   Edit User
                  </Button>;
 
     if(edit) {
-      button = <Button type="primary" onClick={()=> {setEdit(false);}} style= {{display:'relative', marginTop: '10px'}}>
-                 Finished
+      button = <Button type="primary" onClick={()=> {setEdit(false);}} style= {{display:'relative', marginTop: '10px', width: '100px'}}>
+                 Save
                </Button>;
     }
 
@@ -58,10 +58,10 @@ const { Content, Footer } = Layout;
     if(edit) {
       descriptions = <Descriptions title="John Doe" style= {{marginTop: 10}}>
                         <Descriptions.Item label="Email address" >
-                          <Paragraph editable={{ onChange: onChangeEmail }} style= {{marginTop: '10px', marginLeft: '15px', width: '200px'}}>{profileInfo.email}</Paragraph>
+                          <Paragraph editable={{ onChange: onChangeEmail }} style= {{marginTop: '10px', marginLeft: '10px'}}>{profileInfo.email}</Paragraph>
                         </Descriptions.Item>
                         <Descriptions.Item label="Phone Number">
-                         <Paragraph editable={{ onChange: onChangePhone }} style= {{marginTop: '10px', marginLeft: '15px', width: '150px'}}>{profileInfo.phone}</Paragraph>
+                         <Paragraph editable={{ onChange: onChangePhone }} style= {{marginTop: '10px', marginLeft: '10px'}}>{profileInfo.phone}</Paragraph>
                         </Descriptions.Item>
                         <Descriptions.Item label="Student ID">{profileInfo.ID}
                         </Descriptions.Item>

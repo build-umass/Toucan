@@ -4,3 +4,7 @@
 .ant-layout .ant-layout-content .ant-descriptions-row .ant-descriptions-item {
     padding: 10px;
 }
+
+textarea {
+    resize: none;
+}

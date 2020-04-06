@@ -80,7 +80,7 @@ import cookie from 'js-cookie';
           >
             <Input 
               placeholder='E-mail' 
-              style = {{width: '350px', border: '1px solid black' }}
+              style = {{width: '270px', border: '1px solid black' }}
             />
           </Form.Item>
 
@@ -97,7 +97,7 @@ import cookie from 'js-cookie';
           >
               <Input.Password 
                 placeholder='Password' 
-                style={{ width: '350px', border: '1px solid black' }} 
+                style={{ width: '270px', border: '1px solid black' }} 
               />
           </Form.Item>
 
@@ -116,14 +116,14 @@ import cookie from 'js-cookie';
                   if (!value || getFieldValue('password') === value) {
                       return Promise.resolve();
                   }
-                  return Promise.reject('The two passwords that you entered do not match!');
+                  return Promise.reject('The two passwords do not match!');
                   },
               }),
               ]}
           >
               <Input.Password 
                 placeholder='Confirm Password' 
-                style={{ width: '350px', border: '1px solid black'}}
+                style={{ width: '270px', border: '1px solid black'}}
               />
           </Form.Item>
 
@@ -135,7 +135,7 @@ import cookie from 'js-cookie';
           >
               <Input 
                 placeholder='Phone Number' 
-                style={{ width: '350px', border: '1px solid black'}} 
+                style={{ width: '270px', border: '1px solid black'}} 
               />
           </Form.Item>
 

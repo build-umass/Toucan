@@ -95,18 +95,18 @@ export  default function Login() {
               }
               placeholder='Username' 
               prefix={<UserOutlined />}
-              style={{ width: '300px', border: '1px solid black' }}
+              style={{ width: '350px', border: '1px solid black' }}
             />
           </Form.Item>
 
           <Form.Item
             name='password'
-            rules={[{ required: true, message: 'Please input your Username!' }]}
+            rules={[{ required: true, message: 'Please input your Password!' }]}
             >
             <Input.Password 
               placeholder='Password' 
               prefix={<LockOutlined />}
-              style={{ width: '300px', border: '1px solid black' }}
+              style={{ width: '350px', border: '1px solid black' }}
             />
           </Form.Item>
 

@@ -24,7 +24,7 @@
     background-size: cover;
 }
 
-.ant-row .ant-form-item-required{
+.ant-row .ant-form-item-required {
     color: white;
 }
 
@@ -32,18 +32,12 @@
     color: white !important;
 }
 
-.ant-col .ant-input {
-    color: rgba(0, 0, 0, 0.65) !important;
-}
 .ant-col .ant-form-item-explain {
     color: white;
-    width: 390px;
 }
-.ant-col .ant-form-item-has-error .ant-form-item-explain {
-    right: 200px;
-}
+
 .boxes {
-    right: 100px;
+    right: 60px;
 }
 
 @media only screen and (max-width: 575px) {

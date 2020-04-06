@@ -58,10 +58,10 @@ const { Content, Footer } = Layout;
     if(edit) {
       descriptions = <Descriptions title="John Doe" style= {{marginTop: 10}}>
                         <Descriptions.Item label="Email address" >
-                          <Paragraph editable={{ onChange: onChangeEmail }} style= {{marginTop: '10px', width: '200px'}}>{profileInfo.email}</Paragraph>
+                          <Paragraph editable={{ onChange: onChangeEmail }} style= {{marginTop: '10px', marginLeft: '15px', width: '200px'}}>{profileInfo.email}</Paragraph>
                         </Descriptions.Item>
                         <Descriptions.Item label="Phone Number">
-                         <Paragraph editable={{ onChange: onChangePhone }} style= {{marginTop: '10px', width: '150px'}}>{profileInfo.phone}</Paragraph>
+                         <Paragraph editable={{ onChange: onChangePhone }} style= {{marginTop: '10px', marginLeft: '15px', width: '150px'}}>{profileInfo.phone}</Paragraph>
                         </Descriptions.Item>
                         <Descriptions.Item label="Student ID">{profileInfo.ID}
                         </Descriptions.Item>

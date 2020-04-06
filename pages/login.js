@@ -1,17 +1,9 @@
-import { Form, Input, Checkbox, Button, Layout,} from 'antd';
+import { Form, Input, Checkbox, Button, Layout} from 'antd';
 import '../node_modules/antd/dist/antd.css'
 import {UserOutlined, LockOutlined} from '@ant-design/icons';
 import React, {useState} from 'react';
 import { login } from '../utils/auth'
-<<<<<<< HEAD
-import Background from '../public/Randomized-Pattern.svg'
-const { Content } = Layout;
-
-=======
 import './login.css';
-const { Content, Footer } = Layout;
-const { SubMenu } = Menu;
->>>>>>> 59f304d4bd98922481c66178c892b8bfc6c27fef
 
 
 export  default function Login() {
@@ -131,21 +123,14 @@ export  default function Login() {
             </Form.Item>
             <Button 
               onClick={handleSubmit}
-<<<<<<< HEAD
-              type="primary" 
-              htmlType="submit" 
-              style={{ width: '100px', marginLeft: "35%", }}>
-=======
               type='primary' 
               htmlType='submit' 
               style={{ width: '100px', marginLeft: '100px', background: 'white', color: 'black', border: '1px solid black'}}>
->>>>>>> 59f304d4bd98922481c66178c892b8bfc6c27fef
               Log in
             </Button>
           </Form.Item>
 
         </Form>
-        </Content>
       </Layout>
         );
 }

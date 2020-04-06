@@ -49,12 +49,12 @@ function Profile() {
 
   let descriptions = edit ?
 
-    <Descriptions title="John Doe" style={{ marginTop: 10 }}>
+    <Descriptions title="John Doe" style={{ marginTop: 20 }}>
       <Descriptions.Item label="Email address" >
-        <Paragraph editable={{ onChange: onChangeEmail }} style={{ marginTop: '10px', marginLeft: '10px' }}>{profileInfo.email}</Paragraph>
+        <Paragraph editable={{ onChange: onChangeEmail }} style={{ marginLeft: '10px' }}>{profileInfo.email}</Paragraph>
       </Descriptions.Item>
       <Descriptions.Item label="Phone Number">
-        <Paragraph editable={{ onChange: onChangePhone }} style={{ marginTop: '10px', marginLeft: '10px' }}>{profileInfo.phone}</Paragraph>
+        <Paragraph editable={{ onChange: onChangePhone }} style={{ marginLeft: '10px' }}>{profileInfo.phone}</Paragraph>
       </Descriptions.Item>
       <Descriptions.Item label="Student ID">{profileInfo.ID}
       </Descriptions.Item>
@@ -79,7 +79,7 @@ function Profile() {
           <Layout>
             <Content style={{ margin: 'auto', alignItems: 'center' }}>
 
-              <div style={{ padding: '3%', textAlign: 'center', background: '#fff', width: '100%', alignItems: "center", margin: "auto" }}>
+              <div style={{ padding: '3%', textAlign: 'center', height: '90%', background: '#fff', width: '100%', alignItems: "center", margin: "auto" }}>
 
                 <div>
                   <Avatar size={200} style={{ margin: 'auto', display: 'inline-block' }} icon={<UserOutlined />} />

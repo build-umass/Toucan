@@ -49,24 +49,21 @@ function Profile() {
 
   let descriptions = edit ?
 
-    <Descriptions title="John Doe" style={{ marginTop: 20 }}>
+    <Descriptions title="John Doe" bordered column  = {1} style={{ marginTop: 20, marginBottom: 20, width: '100%' }}>
       <Descriptions.Item label="Email address" >
-        <Paragraph editable={{ onChange: onChangeEmail }} style={{ marginLeft: '10px' }}>{profileInfo.email}</Paragraph>
+        <Paragraph editable={{ onChange: onChangeEmail }} style={{ marginLeft: 10, width: '100%'}}>{profileInfo.email}</Paragraph>
       </Descriptions.Item>
       <Descriptions.Item label="Phone Number">
-        <Paragraph editable={{ onChange: onChangePhone }} style={{ marginLeft: '10px' }}>{profileInfo.phone}</Paragraph>
+        <Paragraph editable={{ onChange: onChangePhone }} style={{ marginLeft: 10 }}>{profileInfo.phone}</Paragraph>
       </Descriptions.Item>
       <Descriptions.Item label="Student ID">{profileInfo.ID}
       </Descriptions.Item>
     </Descriptions>
 
-    : <Descriptions title="John Doe" style={{ marginTop: 20 }}>
-      <Descriptions.Item label="Email address">{profileInfo.email}
-      </Descriptions.Item>
-      <Descriptions.Item label="Phone Number">{profileInfo.phone}
-      </Descriptions.Item>
-      <Descriptions.Item label="Student ID">{profileInfo.ID}
-      </Descriptions.Item>
+    : <Descriptions title="John Doe" bordered column  = {1} style={{ marginTop: 20, marginBottom: 20, width: '100%' }}>
+      <Descriptions.Item label="Email address" >{profileInfo.email}</Descriptions.Item>
+      <Descriptions.Item label="Phone Number" >{profileInfo.phone}</Descriptions.Item>
+      <Descriptions.Item label="Student ID" >{profileInfo.ID}</Descriptions.Item>
     </Descriptions>
 
   return (
@@ -77,8 +74,7 @@ function Profile() {
         <Layout>
           <SideBar selected={'profile'} />
           <Layout>
-            <Content style={{ margin: 'auto', alignItems: 'center' }}>
-
+            <Content className = "profile" style={{ width: '70%', margin: 'auto', alignItems: 'center', background: '#fff' }}>
               <div style={{ padding: '3%', textAlign: 'center', height: '90%', background: '#fff', width: '100%', alignItems: "center", margin: "auto" }}>
 
                 <div>

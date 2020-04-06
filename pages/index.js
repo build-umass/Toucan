@@ -1,6 +1,6 @@
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import '../node_modules/antd/dist/antd.css'
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import SideBar from '../components/SideBar.js';
@@ -11,24 +11,24 @@ const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
 
 
-  const Index =()=> { 
+const Index = () => {
 
 
-    return (
-      <Layout style={{ minHeight: '100vh' }}>
+  return (
+    <Layout style={{ minHeight: '100vh' }}>
 
-        <Layout>
-    
-        
-          <Content style={{ margin: '0 16px' }}>
-           
-          </Content>
-          </Layout>
-          <Footer style={{ textAlign: 'center' }}>Build UMass</Footer>
-        </Layout>
+      <Layout>
 
 
-    );
-  }
+        <Content style={{ margin: '0 16px' }}>
+
+        </Content>
+      </Layout>
+      <Footer style={{ textAlign: 'center' }}>Build UMass</Footer>
+    </Layout>
+
+
+  );
+}
 
 export default Index;

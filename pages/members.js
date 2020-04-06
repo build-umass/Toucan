@@ -1,5 +1,5 @@
 
-import React, {useContext, useState, useEffect, useRef} from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Layout, Menu, Breadcrumb, Icon, Button } from 'antd';
 
 const { Content, Footer } = Layout;
@@ -81,16 +81,16 @@ const EditableCell = ({
         <Input ref={inputRef} onPressEnter={save} onBlur={save} />
       </Form.Item>
     ) : (
-      <div
-        className="editable-cell-value-wrap"
-        style={{
-          paddingRight: 24,
-        }}
-        onClick={toggleEdit}
-      >
-        {children}
-      </div>
-    );
+        <div
+          className="editable-cell-value-wrap"
+          style={{
+            paddingRight: 24,
+          }}
+          onClick={toggleEdit}
+        >
+          {children}
+        </div>
+      );
   }
 
   return <td {...restProps}>{childNode}</td>;
@@ -99,57 +99,57 @@ const EditableCell = ({
 
 
 
-function Members (props){
- let columnFormat = [
+function Members(props) {
+  let columnFormat = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      width: '30%',
+      editable: true,
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+    },
+    {
+      title: 'Student ID',
+      dataIndex: 'studentID',
+    },
+    {
+      title: 'Phone Number',
+      dataIndex: 'phno',
+    },
+    {
+      title: 'Delete',
+      dataIndex: 'delete',
+      render: (text, record) =>
+        state.dataSource.length >= 1 ? (
+          <Popconfirm title="Sure to delete?" onConfirm={() => handleDelete(record.key)}>
+            <a>Delete</a>
+          </Popconfirm>
+        ) : null,
+    },
+  ];
+  let [state, setState] = useState({
+    dataSource: [
       {
-        title: 'Name',
-        dataIndex: 'name',
-        width: '30%',
-        editable: true,
+        key: '0',
+        name: 'Edward King 0',
+        email: 'edward@umass.edu',
+        studentID: '10000000',
+        phno: 9900000000
       },
       {
-        title: 'Email',
-        dataIndex: 'email',
+        key: '1',
+        name: 'Edward King 1',
+        email: 'edward@umass.edu',
+        studentID: '10000001',
+        phno: 9900000001
       },
-      {
-        title: 'Student ID',
-        dataIndex: 'studentID',
-      },
-      {
-        title: 'Phone Number',
-        dataIndex: 'phno',
-      },
-      {
-        title: 'Delete',
-        dataIndex: 'delete',
-        render: (text, record) =>
-          state.dataSource.length >= 1 ? (
-            <Popconfirm title="Sure to delete?" onConfirm={() => handleDelete(record.key)}>
-              <a>Delete</a>
-            </Popconfirm>
-          ) : null,
-      },
-    ];
-     let [state, setState]= useState({
-      dataSource: [
-        {
-          key: '0',
-          name: 'Edward King 0',
-          email: 'edward@umass.edu',
-          studentID: '10000000',
-          phno: 9900000000
-        },
-        {
-          key: '1',
-          name: 'Edward King 1',
-          email: 'edward@umass.edu',
-          studentID: '10000001',
-          phno: 9900000001
-        },
-      ],
-      count: 2,
-    });
-  
+    ],
+    count: 2,
+  });
+
 
   let handleDelete = key => {
     const dataSource = [...state.dataSource];
@@ -182,60 +182,60 @@ function Members (props){
       dataSource: newData,
     });
   };
-    const { dataSource } = state;
-    const components = {
-      body: {
-        row: EditableRow,
-        cell: EditableCell,
-      },
-    };
-    let columns = columnFormat.map(col => {
-      if (!col.editable) {
-        return col;
-      }
+  const { dataSource } = state;
+  const components = {
+    body: {
+      row: EditableRow,
+      cell: EditableCell,
+    },
+  };
+  let columns = columnFormat.map(col => {
+    if (!col.editable) {
+      return col;
+    }
 
-      return {
-        ...col,
-        onCell: record => ({
-          record,
-          editable: col.editable,
-          dataIndex: col.dataIndex,
-          title: col.title,
-          handleSave: handleSave,
-        }),
-      };
-    });
-    return (
-      <Layout style={{ minHeight: '100vh' }}>
-          <MyHeader pageName = "Members" />
-            <Layout>
-              <SideBar selected={'members'}/>
-              <Content style={{ margin: '0 16px' }}>
-                <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                  <div>
-                    <Button
-                    onClick={handleAdd}
-                    type="primary"
-                    style={{marginBottom: 16,}}>
-                    Add a row
+    return {
+      ...col,
+      onCell: record => ({
+        record,
+        editable: col.editable,
+        dataIndex: col.dataIndex,
+        title: col.title,
+        handleSave: handleSave,
+      }),
+    };
+  });
+  return (
+    <Layout style={{ minHeight: '100vh' }}>
+      <MyHeader pageName="Members" />
+      <Layout>
+        <SideBar selected={'members'} />
+        <Content style={{ margin: '0 16px' }}>
+          <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+            <div>
+              <Button
+                onClick={handleAdd}
+                type="primary"
+                style={{ marginBottom: 16, }}>
+                Add a row
                     </Button>
-                 <Table
-                    components={components}
-                    rowClassName={() => 'editable-row'}
-                    bordered
-                    dataSource={dataSource}
-                    columns={columns}
-                  />
-                  </div>
-                </div>
-          </Content>
-          </Layout>
-          <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
-    
+              <Table
+                components={components}
+                rowClassName={() => 'editable-row'}
+                bordered
+                dataSource={dataSource}
+                columns={columns}
+              />
+            </div>
+          </div>
+        </Content>
       </Layout>
-        );
-    
-  
+      <Footer style={{ textAlign: 'center' }}>Build Umass</Footer>
+
+    </Layout>
+  );
+
+
 }
 export default withAuthSync(Members);
 

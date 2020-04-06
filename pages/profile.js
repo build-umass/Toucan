@@ -17,6 +17,7 @@ const { Content, Footer } = Layout;
 
 function  Profile(props){
 
+let [editing, changeEditing]= useState(false);
 
 let [profileInfo, changeProfileInfo] = useState(
   {email: 'johndoe@umass.edu',
@@ -57,7 +58,7 @@ const onChangePhno = newPhno => {
             <span> {"                              "}</span>
 
 
-            <Button type="primary" onClick={()=> changeProfileInfo({ 
+            <Button type="primary" onClick={editing? ()=>changeEditing(false) : ()=> changeProfileInfo({ 
               email: <Paragraph editable={{ onChange: onChangeEmail }}>{profileInfo.email}</Paragraph>, 
               ID: <Paragraph editable={{ onChange: onChangeID }}>{profileInfo.ID}</Paragraph>, 
               phno: <Paragraph editable={{ onChange: onChangePhno }}>{profileInfo.phno}</Paragraph>})} 

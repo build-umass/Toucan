@@ -1,11 +1,11 @@
-import { Form, Input, Checkbox, Button, Layout, Menu} from 'antd';
+import { Form, Input, Checkbox, Button, Layout,} from 'antd';
 import '../node_modules/antd/dist/antd.css'
 import {UserOutlined, LockOutlined} from '@ant-design/icons';
 import React, {useState} from 'react';
 import { login } from '../utils/auth'
+import Background from '../public/Randomized-Pattern.svg'
+const { Content } = Layout;
 
-const { Content, Footer } = Layout;
-const { SubMenu } = Menu;
 
 
 export  default function Login() {
@@ -63,16 +63,14 @@ export  default function Login() {
     */
 
     return (
-      <Layout style={{ minHeight: '100vh' }}>
-
-        <img src="buildIcon.jpg" title="Build Logo" style={{ margin: '15px auto 15px auto', width: '200px', height: '200px', padding: "0px" }}/>
-  
+      <Layout style={{minHeight: '100vh', backgroundImage: `url(${Background})`, backgroundSize:'cover', }}>
+        <Content style={{flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center',height:'100%' }}>
         <h1 style={{
           margin: "10px, auto, 10px, auto", 
           fontSize: "60px",   
-          fontFamily: "Arial, Times, Times New Roman, Arvo",
+          fontFamily: 'Montserrat, sans-serif',
           fontWeight: "bold",
-          color: "#222",
+          color: "#ffffff",
           textAlign: "center"}}>
           Build UMass
         </h1>
@@ -126,13 +124,13 @@ export  default function Login() {
               onClick={handleSubmit}
               type="primary" 
               htmlType="submit" 
-              style={{ width: '100px', marginLeft: "100px", background: "blue" }}>
+              style={{ width: '100px', marginLeft: "35%", }}>
               Log in
             </Button>
           </Form.Item>
 
         </Form>
-
+        </Content>
       </Layout>
         );
 }

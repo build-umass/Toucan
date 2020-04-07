@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import './css/signup.css';
 import cookie from 'js-cookie';
-const { Content, Footer } = Layout;
-const { SubMenu } = Menu;
 
 export default function Signup() {
 
@@ -33,7 +31,7 @@ export default function Signup() {
   };
 
   return (
-
+    
     <Layout className='container' style={{ minHeight: '100vh' }}>
 
       <h1 
@@ -167,8 +165,7 @@ export default function Signup() {
           fontWeight: 'lighter',
           zIndex: 2,
           color: 'white',
-          textAlign: 'center',
-          textShadow: '2px 0 black'}}>
+          textAlign: 'center',}}>
         <a style={{color: 'white'}}href=''>Terms of use - </a>
         <a style={{color: 'white'}}href=''>Help - </a>  
         <a style={{color: 'white'}}href=''>Privacy Policy</a>

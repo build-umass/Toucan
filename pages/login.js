@@ -67,7 +67,7 @@ export  default function Login() {
         
         <h1 
           className ='loginMessage'>
-          Log In to Your Account
+          Log in to your account
         </h1>
 
         <Form
@@ -137,8 +137,7 @@ export  default function Login() {
             fontWeight: 'lighter',
             zIndex: 2,
             color: 'white',
-            textAlign: 'center',
-            textShadow: '2px 0 black'}}>
+            textAlign: 'center',}}>
           <a style={{color: 'white'}}href=''>Terms of use - </a>
           <a style={{color: 'white'}}href=''>Help - </a>  
           <a style={{color: 'white'}}href=''>Privacy Policy</a>

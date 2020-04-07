@@ -38,7 +38,6 @@
     text-align: center;
     opacity: 1;
     z-index: 2;
-    text-shadow: -.5px -.5px 0 rgb(80,80,80), .5px -.5px 0 rgb(80,80,80), -.5px .5px 0 rgb(80,80,80), .5px .5px 0 rgb(80,80,80);
 }
 
 .innerContainerSignup{
@@ -46,11 +45,11 @@
    height: 500px;
    font-size: 1.1em;
    font-weight: bold;
-   border: 1px solid black;
-   border-radius: 1%;
+ 
+   border: 4.5px solid rgb(200,33,4);
+   border-radius: 2%;
    background: white;
    z-index: 1;
-   box-shadow: -.5px -.5px 0 rgb(80,80,80), .5px -.5px 0 rgb(80,80,80), -.5px .5px 0 rgb(80,80,80), .5px .5px 0 rgb(80,80,80);
 }
 
 .signupMessage{
@@ -72,8 +71,8 @@
 
 .inputBoxSignup{
     width: 270px;
+    
     border: 1px solid black;
-    box-shadow: -.5px -.5px 0 rgb(80,80,80), .5px -.5px 0 rgb(80,80,80), -.5px .5px 0 rgb(80,80,80), .5px .5px 0 rgb(80,80,80);
 }
 
 .formItemSignup{
@@ -90,7 +89,6 @@
     font-size: 1em; 
     font-weight: bold;
     border-radius: 2%;
-    box-shadow: -.5px -.5px 0 rgb(80,80,80), .5px -.5px 0 rgb(80,80,80), -.5px .5px 0 rgb(80,80,80), .5px .5px 0 rgb(80,80,80);
 }
 
 @media only screen and (max-height: 600px) {

@@ -63,8 +63,6 @@ export  default function Login() {
 
         <div 
           className ='innerContainerLogin'
-          style={{
-            boxShadow: 'inset 0 0 10px black'}}
         >
         
         <h1 
@@ -109,13 +107,11 @@ export  default function Login() {
               name='remember'
             >
               <Checkbox 
-                style={{float: 'left' }}>
+                className="rememberMeLogin">
                 Remember me
               </Checkbox>
               <a href=''
-                 className='forgotPass'
-                  style = {{
-                    float: 'right'}}>
+                 className='forgotPassLogin'>
                   Forgot password
               </a>
             </Form.Item>

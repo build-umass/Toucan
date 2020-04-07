@@ -43,8 +43,6 @@ export default function Signup() {
 
       <div 
         className='innerContainerSignup'
-        style = {{
-          boxShadow: 'inset 0 0 10px black'}}
       >
         
       <h1 

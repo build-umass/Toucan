@@ -15,7 +15,7 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: 0.95;
+    opacity: 1;
     background-repeat: no-repeat;
     background-image: url('/Randomized-Pattern.svg');
     background-position: 50% 0;
@@ -24,4 +24,107 @@
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
+}
+
+.titleLogin{
+    margin-top: 2.5%;
+    font-size: 60px;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    opacity: 1;
+    z-index: 2;
+    text-shadow: 2px 0 black;
+}
+
+.innerContainerLogin{
+    width: 450px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 1%;
+    background: white;
+    z-index: 1;
+ }
+
+ .loginMessage{
+    margin-top: 5%;
+    font-size: 25px;
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    opacity: 1;
+    z-index: 2;
+ }
+ 
+ .boxesLogin{
+    margin: auto;
+    margin-top: 5%;
+    margin-left: 50px;
+ }
+
+ .inputBoxLogin {
+    width: 350px; 
+    border: 1px solid black;
+    box-shadow: inset 0 0 2px black;
+ }
+
+ .loginButton{
+    width: 250px; 
+    margin-left: 50px; 
+    color: white;
+    font-size: 1em;
+    font-weight: bold; 
+    border-radius: 2%;
+    box-shadow: inset 0 0 3px black;
+ }
+
+ .forgotPass {
+    margin-right: 50px;
+ }
+
+ @media only screen and (max-width: 575px) {
+
+    .titleLogin{
+        font-size: 45px;
+    }
+
+    .boxesLogin{
+        margin: auto;
+        margin-top: 5%;
+        margin-left: 25px;
+     }
+
+    .innerContainerLogin {
+        margin-top: 2.5%;
+        width: 300px;
+        height: 300px;
+    }
+
+    .loginMessage{
+        margin-top: 5%;
+        font-size: 22.5px;
+        font-family: Montserrat, sans-serif;
+        text-align: center;
+        opacity: 1;
+        z-index: 2;
+     }
+
+    .forgotPass {
+        margin-right: 20px;
+     }
+
+    .inputBoxLogin {
+        width: 250px; 
+        border: 1px solid black;
+     }
+
+     .loginButton{
+        width: 200px; 
+        margin-left:25px; 
+        color: white;
+        font-size: 1em;
+        font-weight: bold; 
+        border-radius: 2%;
+        box-shadow: inset 0 0 3px black;
+     }
 }

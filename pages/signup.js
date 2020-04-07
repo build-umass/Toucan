@@ -3,9 +3,9 @@ import '../node_modules/antd/dist/antd.css'
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import './css/signup.css';
+import cookie from 'js-cookie';
 const { Content, Footer } = Layout;
 const { SubMenu } = Menu;
-import cookie from 'js-cookie';
 
 export default function Signup() {
 
@@ -36,44 +36,32 @@ export default function Signup() {
 
     <Layout className='container' style={{ minHeight: '100vh' }}>
 
-        <h1 className='title' style={{
-          marginTop: '10px',
-          marginBottom: '0px',
-          fontSize: '60px',
-          fontFamily: 'Montserrat, sans-serif',
-          fontWeight: 'bold',
-          color: 'white',
-          textAlign: 'center',
-          opacity: 1,
-          zIndex: 2,
-          textShadow: '2px 0 black'}}>
-          BUILD UMass
-        </h1>
+      <h1 
+        className='titleSignup'>
+        BUILD UMass
+      </h1>
 
-      <div className ='innerContainer'>
+      <div 
+        className='innerContainerSignup'
+        style = {{
+          boxShadow: 'inset 0 0 10px black'}}
+      >
         
-      <h1 style={{
-        marginTop: '25px',
-        marginBottom: '5px',
-        fontSize: '25px',
-        fontFamily: 'Montserrat, sans-serif',
-        textAlign: 'center',
-        opacity: 1,
-        zIndex: 2,}}>
+      <h1 
+        className='signupMessage'>
         Sign Up
       </h1>
 
-      <Form
+      <Form 
         {...formItemLayout}
         layout='horizontal'
-        className='boxes'
-        style={{ position: 'relative', margin: 'auto', marginTop: '2.5%' }}
+        className='boxesSignup'
       >
 
         <Form.Item
           name='email'
           label='E-mail'
-          className='formItem'
+          className='formItemSignup'
           rules={[
             {
               type: 'email',
@@ -87,14 +75,14 @@ export default function Signup() {
         >
           <Input
             placeholder='E-mail'
-            style={{ width: '270px', border: '1px solid black', boxShadow: 'inset 0 0 2px black' }}
+            className='inputBoxSignup'
           />
         </Form.Item>
 
         <Form.Item
           name='password'
           label='Password'
-          className='formItem'
+          className='formItemSignup'
           rules={[
             {
               required: true,
@@ -105,7 +93,7 @@ export default function Signup() {
         >
           <Input.Password
             placeholder='Password'
-            style={{ width: '270px', border: '1px solid black', boxShadow: 'inset 0 0 2px black' }}
+            className='inputBoxSignup'
           />
         </Form.Item>
 
@@ -114,7 +102,7 @@ export default function Signup() {
           label='Confirm Password'
           dependencies={['password']}
           hasFeedback
-          className='formItem'
+          className='formItemSignup'
           rules={[
             {
               required: true,
@@ -132,26 +120,26 @@ export default function Signup() {
         >
           <Input.Password
             placeholder='Confirm Password'
-            style={{ width: '270px', border: '1px solid black', boxShadow: 'inset 0 0 2px black' }}
+            className='inputBoxSignup'
           />
         </Form.Item>
 
         <Form.Item
           name='phone'
           label='Phone Number'
-          className='formItem'
+          className='formItemSignup'
           rules={[{ required: true, message: 'Please input your phone number!' }]}
         >
           <Input
             placeholder='Phone Number'
-            style={{ width: '270px', border: '1px solid black', boxShadow: 'inset 0 0 2px black' }}
+            className='inputBoxSignup'
           />
         </Form.Item>
 
         <Form.Item
           name='agreement'
           {...tailFormItemLayout}
-          className='checkbox'
+          className='checkboxSignup'
         >
           <Checkbox style={{ fontSize: '1em' }}>
             I have read the <a href='' >agreement</a>
@@ -162,9 +150,8 @@ export default function Signup() {
           <Button
             type='primary'
             htmlType='submit'
-            className='button'
-            onClick={() => cookie.set('session', 'user', { expires: 3 })}
-            style={{ width: '270px', color: 'white', fontSize: '1em', fontWeight: 'bold', borderRadius: '2%', boxShadow: 'inset 0 0 3px black'}}>
+            className='buttonSignup'
+            onClick={() => cookie.set('session', 'user', { expires: 3 })}>
             Register
             </Button>
         </Form.Item>
@@ -173,7 +160,8 @@ export default function Signup() {
 
       </div>
 
-      <h3 style={{
+      <h3 
+        style={{
           marginTop: '10px',
           fontSize: '13px',
           fontFamily: 'Montserrat, sans-serif',
@@ -183,9 +171,9 @@ export default function Signup() {
           color: 'white',
           textAlign: 'center',
           textShadow: '2px 0 black'}}>
-          <a style={{color: 'white'}}href="url">Terms of use - </a>
-          <a style={{color: 'white'}}href="url">Help - </a>  
-          <a style={{color: 'white'}}href="url">Privacy Policy</a>
+        <a style={{color: 'white'}}href=''>Terms of use - </a>
+        <a style={{color: 'white'}}href=''>Help - </a>  
+        <a style={{color: 'white'}}href=''>Privacy Policy</a>
         </h3>
 
     </Layout>

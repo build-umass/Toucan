@@ -87,7 +87,7 @@ export default function Signup() {
         >
           <Input
             placeholder='E-mail'
-            style={{ width: '270px', border: '1px solid black' }}
+            style={{ width: '270px', border: '1px solid black', boxShadow: 'inset 0 0 2px black' }}
           />
         </Form.Item>
 
@@ -105,7 +105,7 @@ export default function Signup() {
         >
           <Input.Password
             placeholder='Password'
-            style={{ width: '270px', border: '1px solid black' }}
+            style={{ width: '270px', border: '1px solid black', boxShadow: 'inset 0 0 2px black' }}
           />
         </Form.Item>
 
@@ -132,7 +132,7 @@ export default function Signup() {
         >
           <Input.Password
             placeholder='Confirm Password'
-            style={{ width: '270px', border: '1px solid black' }}
+            style={{ width: '270px', border: '1px solid black', boxShadow: 'inset 0 0 2px black' }}
           />
         </Form.Item>
 
@@ -144,7 +144,7 @@ export default function Signup() {
         >
           <Input
             placeholder='Phone Number'
-            style={{ width: '270px', border: '1px solid black' }}
+            style={{ width: '270px', border: '1px solid black', boxShadow: 'inset 0 0 2px black' }}
           />
         </Form.Item>
 
@@ -164,7 +164,7 @@ export default function Signup() {
             htmlType='submit'
             className='button'
             onClick={() => cookie.set('session', 'user', { expires: 3 })}
-            style={{ width: '270px', color: 'white', fontSize: '1em', fontWeight: 'bold', borderRadius: '2%'}}>
+            style={{ width: '270px', color: 'white', fontSize: '1em', fontWeight: 'bold', borderRadius: '2%', boxShadow: 'inset 0 0 3px black'}}>
             Register
             </Button>
         </Form.Item>

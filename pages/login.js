@@ -106,7 +106,7 @@ export  default function Login() {
               }
               placeholder='Username' 
               prefix={<UserOutlined />}
-              style={{ width: '350px', border: '1px solid black' }}
+              style={{ width: '350px', border: '1px solid black', boxShadow: 'inset 0 0 2px black' }}
             />
           </Form.Item>
 
@@ -117,7 +117,7 @@ export  default function Login() {
             <Input.Password 
               placeholder='Password' 
               prefix={<LockOutlined />}
-              style={{ width: '350px', border: '1px solid black' }}
+              style={{ width: '350px', border: '1px solid black', boxShadow: 'inset 0 0 2px black'}}
             />
           </Form.Item>
 
@@ -138,17 +138,17 @@ export  default function Login() {
               onClick={handleSubmit}
               type='primary' 
               htmlType='submit' 
-              style={{ width: '250px', marginLeft: '50px', color: 'white', fontSize: '1em', fontWeight: 'bold', borderRadius: '2%'}}>
+              style={{ width: '250px', marginLeft: '50px', color: 'white', fontSize: '1em', fontWeight: 'bold', borderRadius: '2%', boxShadow: 'inset 0 0 3px black'}}>
               Log in
             </Button>
           </Form.Item>
 
         </Form>
-        
+
         </div>
 
         <h3 style={{
-          marginTop: '2.5%',
+          marginTop: '10px',
           fontSize: '13px',
           fontFamily: 'Montserrat, sans-serif',
           fontStyle: 'italic',

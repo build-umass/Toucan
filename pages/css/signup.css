@@ -94,12 +94,15 @@
 }
 
 @media only screen and (max-height: 600px) {
+
     .titleSignup {
         display: none;
     }
+
     .signupMessage{
         display: none;
     }
+    
     .innerContainerSignup {
         height: 510px;
     }
@@ -133,6 +136,7 @@
     .titleSignup {
         font-size: 40px;
     }
+
     .innerContainerSignup {
         margin-top: 0%;
         width: 300px;

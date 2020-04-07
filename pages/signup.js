@@ -36,32 +36,44 @@ export default function Signup() {
 
     <Layout className='container' style={{ minHeight: '100vh' }}>
 
-      <h1 style={{
-        marginTop: '5%',
-        marginBottom: '2.5%',
-        fontSize: '60px',
-        fontFamily: 'Arial, Times, Times New Roman, Arvo',
-        fontWeight: 'bold',
-        color: 'white',
-        textAlign: 'center',
-        textShadow: '2px 0 black',
-        opacity: 1,
-        zIndex: 1,
-      }}>
-        Build UMass
+        <h1 className='title' style={{
+          marginTop: '2.5%',
+          marginBottom: '0px',
+          fontSize: '60px',
+          fontFamily: 'Montserrat, sans-serif',
+          fontWeight: 'bold',
+          color: 'white',
+          textAlign: 'center',
+          opacity: 1,
+          zIndex: 2,
+          textShadow: '2px 0 black'}}>
+          Build UMass
         </h1>
+
+      <div className ='innerContainer'>
+        
+      <h1 style={{
+        marginTop: '25px',
+        marginBottom: '5px',
+        fontSize: '25px',
+        fontFamily: 'Montserrat, sans-serif',
+        textAlign: 'center',
+        opacity: 1,
+        zIndex: 2,}}>
+        Sign Up
+      </h1>
 
       <Form
         {...formItemLayout}
         layout='horizontal'
         className='boxes'
-        style={{ position: 'relative', margin: 'auto', marginTop: '0%' }}
+        style={{ position: 'relative', margin: 'auto', marginTop: '2.5%' }}
       >
 
         <Form.Item
           name='email'
           label='E-mail'
-          style={{ color: 'white', fontSize: '5px' }}
+          className='formItem'
           rules={[
             {
               type: 'email',
@@ -82,6 +94,7 @@ export default function Signup() {
         <Form.Item
           name='password'
           label='Password'
+          className='formItem'
           rules={[
             {
               required: true,
@@ -101,6 +114,7 @@ export default function Signup() {
           label='Confirm Password'
           dependencies={['password']}
           hasFeedback
+          className='formItem'
           rules={[
             {
               required: true,
@@ -125,8 +139,8 @@ export default function Signup() {
         <Form.Item
           name='phone'
           label='Phone Number'
+          className='formItem'
           rules={[{ required: true, message: 'Please input your phone number!' }]}
-          style={{ color: 'white' }}
         >
           <Input
             placeholder='Phone Number'
@@ -139,8 +153,8 @@ export default function Signup() {
           {...tailFormItemLayout}
           className='checkbox'
         >
-          <Checkbox style={{ color: 'white', fontSize: '1em' }}>
-            I have read the <a href='' style={{ color: 'cyan' }}>agreement</a>
+          <Checkbox style={{ fontSize: '1em' }}>
+            I have read the <a href='' >agreement</a>
           </Checkbox>
         </Form.Item>
 
@@ -150,12 +164,29 @@ export default function Signup() {
             htmlType='submit'
             className='button'
             onClick={() => cookie.set('session', 'user', { expires: 3 })}
-            style={{ width: '100px', background: 'white', color: 'black', border: '1px solid black' }}>
+            style={{ width: '250px', color: 'white', fontSize: '1em', fontWeight: 'bold', borderRadius: '2%'}}>
             Register
             </Button>
         </Form.Item>
 
       </Form>
+      
+      </div>
+
+      <h3 style={{
+          marginTop: '10px',
+          fontSize: '13px',
+          fontFamily: 'Montserrat, sans-serif',
+          fontStyle: 'italic',
+          fontWeight: 'lighter',
+          zIndex: 2,
+          color: 'white',
+          textAlign: 'center',
+          textShadow: '2px 0 black'}}>
+          <a style={{color: 'white'}}href="url">Terms of use - </a>
+          <a style={{color: 'white'}}href="url">Help - </a>  
+          <a style={{color: 'white'}}href="url">Privacy Policy</a>
+        </h3>
 
     </Layout>
 

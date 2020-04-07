@@ -61,24 +61,37 @@ export  default function Login() {
     */
 
     return (
+
       <Layout className = 'container'>
-  
+        
         <h1 style={{
-          marginTop: '10%',
+          marginTop: '2.5%',
           fontSize: '60px',
           fontFamily: 'Montserrat, sans-serif',
           fontWeight: 'bold',
           color: 'white',
           textAlign: 'center',
           opacity: 1,
-          zIndex: 1,
+          zIndex: 2,
           textShadow: '2px 0 black'}}>
           Build UMass
         </h1>
 
+        <div style={{width: '400px', height: '300px', marginTop: '0px', border: '1px solid black', borderRadius: '1%', background: 'white', zIndex: '1'}}>
+        
+        <h1 style={{
+          marginTop: '5%',
+          fontSize: '25px',
+          fontFamily: 'Montserrat, sans-serif',
+          textAlign: 'center',
+          opacity: 1,
+          zIndex: 2,}}>
+          Log In to Your Account
+        </h1>
+
         <Form
           name='normal_login'
-          style={{ margin: 'auto', marginTop: '5px' }}
+          style={{ margin: 'auto', marginTop: '5%', marginLeft: '25px' }}
         >
 
           <Form.Item
@@ -113,11 +126,11 @@ export  default function Login() {
               name='remember'
             >
               <Checkbox 
-                style={{float: 'left', color: 'white' }}>
+                style={{float: 'left' }}>
                 Remember me
               </Checkbox>
               <a href=''
-                  style = {{float: 'right', color: 'white' }}>
+                  style = {{float: 'right', marginRight: '25px'}}>
                   Forgot password
               </a>
             </Form.Item>
@@ -125,12 +138,30 @@ export  default function Login() {
               onClick={handleSubmit}
               type='primary' 
               htmlType='submit' 
-              style={{ width: '100px', marginLeft: '100px', background: 'white', color: 'black', border: '1px solid black'}}>
+              style={{ width: '250px', marginLeft: '50px', color: 'white', fontSize: '1em', fontWeight: 'bold', borderRadius: '2%'}}>
               Log in
             </Button>
           </Form.Item>
 
         </Form>
+        
+        </div>
+
+        <h3 style={{
+          marginTop: '2.5%',
+          fontSize: '13px',
+          fontFamily: 'Montserrat, sans-serif',
+          fontStyle: 'italic',
+          fontWeight: 'lighter',
+          zIndex: 2,
+          color: 'white',
+          textAlign: 'center',
+          textShadow: '2px 0 black'}}>
+          <a style={{color: 'white'}}href="url">Terms of use - </a>
+          <a style={{color: 'white'}}href="url">Help - </a>  
+          <a style={{color: 'white'}}href="url">Privacy Policy</a>
+        </h3>
+
       </Layout>
         );
 }

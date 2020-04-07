@@ -23,31 +23,53 @@
     -webkit-background-size: cover;
     background-size: cover;
 }
-
-.ant-row .ant-form-item-required {
-    color: white;
+.ant-form-item-has-feedback.ant-form-item-has-success .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-warning .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-error .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-is-validating .ant-form-item-children-icon {
+    right: 28px;
 }
+.innerContainer{
+   width: 450px;
+   height: 500px;
+   border: 1px solid black;
+   border-radius: 1%;
+   background: white;
+   z-index: 1;
 
-.ant-row .ant-form-item-required::before {
-    color: white !important;
 }
-
-.ant-col .ant-form-item-explain {
-    color: white;
-}
-
 .boxes {
-    right: 60px;
+    right: 0px;
+}
+
+.formItem{
+    padding-top: 15px;
 }
 
 @media only screen and (max-width: 575px) {
-    .boxes {
-        right: -50px;
+    .title {
+        display: none;
     }
+    .boxes {
+        left: 60px;
+    }
+    .innerContainer {
+        margin-top: 5%;
+        width: 400px;
+        height: 600px;
+    }
+
+    .formItem{
+        padding-top: 0px;
+        margin: 5px;
+    }
+    
     .checkbox{
         margin-left: 25px;
     }
+    
+    .ant-form-item-has-feedback.ant-form-item-has-success .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-warning .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-error .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-is-validating .ant-form-item-children-icon {
+        right: 118px;
+    }
+
     .button {
-        margin-left: 75px;
+        margin-left: 15px;
     }
 }

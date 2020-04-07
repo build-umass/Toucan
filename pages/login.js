@@ -74,7 +74,7 @@ export  default function Login() {
           opacity: 1,
           zIndex: 2,
           textShadow: '2px 0 black'}}>
-          Build UMass
+          BUILD UMass
         </h1>
 
         <div style={{width: '400px', height: '300px', marginTop: '0px', border: '1px solid black', borderRadius: '1%', background: 'white', zIndex: '1'}}>

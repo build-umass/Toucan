@@ -47,7 +47,7 @@ export default function Signup() {
           opacity: 1,
           zIndex: 2,
           textShadow: '2px 0 black'}}>
-          Build UMass
+          BUILD UMass
         </h1>
 
       <div className ='innerContainer'>

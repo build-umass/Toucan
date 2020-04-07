@@ -5,7 +5,6 @@ import React, {useState} from 'react';
 import { login } from '../utils/auth'
 import './css/login.css';
 
-
 export  default function Login() {
 
   const [userData, setUserData] = useState({ username: '', error: '' })
@@ -46,39 +45,34 @@ export  default function Login() {
       )
     }
   }
-      /*TODO:
-        Create login page. Use ant design components as much as possible.
-        Don't worry about routing or setting up actual working login, just make it look good.
-        I might work on your branch too, to add functionality to the login, so make sure you push to github whenever you add anything,
-        and pull from 'origin enoch' before starting again. That way we will both have the same copy. Let me know if you have any questions.
-        Your page will be hosted at localhost:3000/login
-    */
 
-    /*https://codesandbox.io/s/zkgqo
+  /*https://codesandbox.io/s/zkgqo
       Template code for login page from antd website, 
       should help in setting up login authentication
       API: https://ant.design/components/form/       
     */
 
     return (
+
       <Layout className = 'container'>
-  
-        <h1 style={{
-          marginTop: '10%',
-          fontSize: '60px',
-          fontFamily: 'Montserrat, sans-serif',
-          fontWeight: 'bold',
-          color: 'white',
-          textAlign: 'center',
-          opacity: 1,
-          zIndex: 1,
-          textShadow: '2px 0 black'}}>
-          Build UMass
+        
+        <h1 
+          className='titleLogin'>
+          BUILD UMass
+        </h1>
+
+        <div 
+          className ='innerContainerLogin'
+        >
+        
+        <h1 
+          className ='loginMessage'>
+          Log in to your account
         </h1>
 
         <Form
           name='normal_login'
-          style={{ margin: 'auto', marginTop: '5px' }}
+          className='boxesLogin'
         >
 
           <Form.Item
@@ -93,7 +87,7 @@ export  default function Login() {
               }
               placeholder='Username' 
               prefix={<UserOutlined />}
-              style={{ width: '350px', border: '1px solid black' }}
+              className="inputBoxLogin"
             />
           </Form.Item>
 
@@ -104,7 +98,7 @@ export  default function Login() {
             <Input.Password 
               placeholder='Password' 
               prefix={<LockOutlined />}
-              style={{ width: '350px', border: '1px solid black' }}
+              className="inputBoxLogin"
             />
           </Form.Item>
 
@@ -113,11 +107,11 @@ export  default function Login() {
               name='remember'
             >
               <Checkbox 
-                style={{float: 'left', color: 'white' }}>
+                className="rememberMeLogin">
                 Remember me
               </Checkbox>
               <a href=''
-                  style = {{float: 'right', color: 'white' }}>
+                 className='forgotPassLogin'>
                   Forgot password
               </a>
             </Form.Item>
@@ -125,13 +119,30 @@ export  default function Login() {
               onClick={handleSubmit}
               type='primary' 
               htmlType='submit' 
-              style={{ width: '100px', marginLeft: '100px', background: 'white', color: 'black', border: '1px solid black'}}>
+              className='loginButton'>
               Log in
             </Button>
           </Form.Item>
 
         </Form>
+
+        </div>
+
+        <h3 
+          style={{
+            marginTop: '10px',
+            fontSize: '13px',
+            fontFamily: 'Montserrat, sans-serif',
+            fontStyle: 'italic',
+            fontWeight: 'lighter',
+            zIndex: 2,
+            color: 'white',
+            textAlign: 'center',}}>
+          <a style={{color: 'white'}}href=''>Terms of use - </a>
+          <a style={{color: 'white'}}href=''>Help - </a>  
+          <a style={{color: 'white'}}href=''>Privacy Policy</a>
+        </h3>
+
       </Layout>
         );
 }
-

@@ -13,9 +13,9 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: 0.95;
+    opacity: 1;
     background-repeat: no-repeat;
-    background-Image: url('../public/Randomized-Pattern.svg');
+    background-image: url('/Randomized-Pattern.svg');
     background-position: 50% 0;
     -ms-background-size: cover;
     -o-background-size: cover;
@@ -24,30 +24,150 @@
     background-size: cover;
 }
 
-.ant-row .ant-form-item-required {
+.ant-form-item-has-feedback.ant-form-item-has-success .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-warning .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-error .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-is-validating .ant-form-item-children-icon {
+    right: 28px;
+}
+
+.titleSignup {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 60px;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
     color: white;
+    text-align: center;
+    opacity: 1;
+    z-index: 2;
 }
 
-.ant-row .ant-form-item-required::before {
-    color: white !important;
+.innerContainerSignup{
+   width: 450px;
+   height: 500px;
+   font-size: 1.1em;
+   font-weight: bold;
+ 
+   border: 4.5px solid rgb(200,33,4);
+   border-radius: 2%;
+   background: white;
+   z-index: 1;
 }
 
-.ant-col .ant-form-item-explain {
+.signupMessage{
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 2em;
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    opacity: 1;
+    z-index: 2;
+}
+
+.boxesSignup {
+    position: relative;
+    margin: auto;
+    margin-top: 2.5%;
+    right: 0px;
+}
+
+.inputBoxSignup{
+    width: 270px;
+    
+    border: 1px solid black;
+}
+
+.formItemSignup{
+    padding-top: 15px;
+}
+
+.ant-input {
+    font-size: 1.1em;
+}
+
+.buttonSignup{
+    width: 270px;
     color: white;
+    font-size: 1em; 
+    font-weight: bold;
+    border-radius: 2%;
 }
 
-.boxes {
-    right: 60px;
+@media only screen and (max-height: 600px) {
+
+    .titleSignup {
+        display: none;
+    }
+
+    .signupMessage{
+        display: none;
+    }
+    
+    .innerContainerSignup {
+        height: 510px;
+    }
+}
+
+@media only screen and (min-height: 600px) and (max-height: 700px) {
+
+    .titleSignup {
+        display: none;
+    }
+
+    .signupMessage{
+        margin-top: 5px;
+        margin-bottom: -15px;
+        font-size: 25px;
+        font-family: Montserrat, sans-serif;
+        text-align: center;
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .innerContainerSignup {
+        margin-top: 0%;
+        width: 300px;
+        height: 550px;
+    }
+
+}
+
+@media (min-height: 700px) and (max-width: 575px) {
+    .titleSignup {
+        font-size: 40px;
+    }
+
+    .innerContainerSignup {
+        margin-top: 0%;
+        width: 300px;
+        height: 600px;
+    }
 }
 
 @media only screen and (max-width: 575px) {
-    .boxes {
-        right: -50px;
+   
+    .innerContainerSignup {
+        margin-top: 5%;
+        width: 300px;
     }
-    .checkbox{
+
+    .boxesSignup {
+        margin-top: 15px;
+        left: 15px;
+    }
+
+    .formItemSignup{
+        padding-top: 0px;
+        margin: 0px;
+    }
+    
+    .checkboxSignup{
         margin-left: 25px;
     }
-    .button {
-        margin-left: 75px;
+    
+    .ant-form-item-has-feedback.ant-form-item-has-success .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-warning .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-has-error .ant-form-item-children-icon, .ant-form-item-has-feedback.ant-form-item-is-validating .ant-form-item-children-icon {
+        right: 27px;
+    }
+
+    .buttonSignup {
+        margin-left: 0px;
     }
 }

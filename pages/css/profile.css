@@ -1,10 +1,14 @@
+div {
+    overflow: hidden;
+}
 .ant-layout .ant-layout-content .ant-descriptions-title{
     margin-bottom: 25px;
-}
-.ant-layout .ant-layout-content .ant-descriptions-row .ant-descriptions-item {
-    padding: 10px;
 }
 
 textarea {
     resize: none;
+}
+
+.ant-layout {
+    background: white;
 }

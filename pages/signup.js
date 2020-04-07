@@ -37,7 +37,7 @@ export default function Signup() {
     <Layout className='container' style={{ minHeight: '100vh' }}>
 
         <h1 className='title' style={{
-          marginTop: '2.5%',
+          marginTop: '10px',
           marginBottom: '0px',
           fontSize: '60px',
           fontFamily: 'Montserrat, sans-serif',
@@ -164,13 +164,13 @@ export default function Signup() {
             htmlType='submit'
             className='button'
             onClick={() => cookie.set('session', 'user', { expires: 3 })}
-            style={{ width: '250px', color: 'white', fontSize: '1em', fontWeight: 'bold', borderRadius: '2%'}}>
+            style={{ width: '270px', color: 'white', fontSize: '1em', fontWeight: 'bold', borderRadius: '2%'}}>
             Register
             </Button>
         </Form.Item>
 
       </Form>
-      
+
       </div>
 
       <h3 style={{

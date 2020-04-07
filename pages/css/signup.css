@@ -15,7 +15,7 @@
     z-index: 0;
     opacity: 0.95;
     background-repeat: no-repeat;
-    background-Image: url('../public/Randomized-Pattern.svg');
+    background-image: url('/Randomized-Pattern.svg');
     background-position: 50% 0;
     -ms-background-size: cover;
     -o-background-size: cover;

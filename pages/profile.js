@@ -8,7 +8,6 @@ import { UserOutlined } from '@ant-design/icons';
 import { Descriptions } from 'antd';
 import { Typography } from 'antd';
 import React, { useState } from 'react';
-import { Button } from 'antd';
 import './css/profile.css';
 const { Paragraph } = Typography;
 const { Content, Footer } = Layout;
@@ -21,7 +20,7 @@ function Profile() {
     ID: '12345678',
     phone: '1234567890'
   });
-  let [edit, setEdit] = useState(false);
+  
   function onChangeEmail(newEmail) {
     //TODO: Save to database
     changeProfileInfo({ ...profileInfo, email: newEmail });
@@ -36,35 +35,6 @@ function Profile() {
     //TODO: Save to database
     changeProfileInfo({ ...profileInfo, phone: newPhone });
   };
-
-  let button = <Button type="primary" onClick={() => { setEdit(true); }} style={{ display: 'relative', marginTop: '10px', width: '100px' }}>
-    Edit User
-                 </Button>;
-
-  if (edit) {
-    button = <Button type="primary" onClick={() => { setEdit(false); }} style={{ display: 'relative', marginTop: '10px', width: '100px' }}>
-      Save
-               </Button>;
-  }
-
-  let descriptions = edit ?
-
-    <Descriptions title="John Doe" bordered column  = {1} style={{ marginTop: 20, marginBottom: 20, width: '100%' }}>
-      <Descriptions.Item label="Email address" >
-        <Paragraph editable={{ onChange: onChangeEmail }} style={{ marginLeft: 10, width: '100%'}}>{profileInfo.email}</Paragraph>
-      </Descriptions.Item>
-      <Descriptions.Item label="Phone Number">
-        <Paragraph editable={{ onChange: onChangePhone }} style={{ marginLeft: 10 }}>{profileInfo.phone}</Paragraph>
-      </Descriptions.Item>
-      <Descriptions.Item label="Student ID">{profileInfo.ID}
-      </Descriptions.Item>
-    </Descriptions>
-
-    : <Descriptions title="John Doe" bordered column  = {1} style={{ marginTop: 20, marginBottom: 20, width: '100%' }}>
-      <Descriptions.Item label="Email address" >{profileInfo.email}</Descriptions.Item>
-      <Descriptions.Item label="Phone Number" >{profileInfo.phone}</Descriptions.Item>
-      <Descriptions.Item label="Student ID" >{profileInfo.ID}</Descriptions.Item>
-    </Descriptions>
 
   return (
     <Layout style={{ minHeight: '100vh', margin: 'auto', textAlgin: 'center' }}>
@@ -83,9 +53,13 @@ function Profile() {
                   <span> {"                              "}</span>
                 </div>
 
-                {button}
-
-                {descriptions}
+                <Descriptions title="John Doe" bordered column  = {1} style={{ marginTop: 20, marginBottom: 20, width: '100%' }}>
+                  <Descriptions.Item label="Email address" >
+                    <Paragraph editable={{ onChange: onChangeEmail }} style={{ paddingLeft: '20px', margin: 'auto', height: '32px', width: '300px', padding: '0' }}>{profileInfo.email}</Paragraph></Descriptions.Item>
+                  <Descriptions.Item label="Phone Number">
+                    <Paragraph editable={{ onChange: onChangePhone }} style={{ paddingLeft: '20px', margin: 'auto', height: '32px', width: '300px'}}>{profileInfo.phone}</Paragraph></Descriptions.Item>
+                  <Descriptions.Item label="Student ID" style={{ paddingLeft: '30px', paddingTop: '10px'}}>{profileInfo.ID}</Descriptions.Item>
+                </Descriptions>
 
               </div>
             </Content>

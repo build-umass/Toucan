@@ -55,9 +55,9 @@ function Profile() {
 
                 <Descriptions title="John Doe" bordered column  = {1} style={{ marginTop: 20, marginBottom: 20, width: '100%' }}>
                   <Descriptions.Item label="Email address" >
-                    <Paragraph editable={{ onChange: onChangeEmail }} style={{ paddingLeft: '20px', margin: 'auto', height: '32px', width: '300px', padding: '0' }}>{profileInfo.email}</Paragraph></Descriptions.Item>
+                    <Paragraph className = "editable" editable={{ onChange: onChangeEmail }} style={{ paddingLeft: '20px', margin: 'auto', height: '32px', width: '250px'}}>{profileInfo.email}</Paragraph></Descriptions.Item>
                   <Descriptions.Item label="Phone Number">
-                    <Paragraph editable={{ onChange: onChangePhone }} style={{ paddingLeft: '20px', margin: 'auto', height: '32px', width: '300px'}}>{profileInfo.phone}</Paragraph></Descriptions.Item>
+                    <Paragraph className = "editable" editable={{ onChange: onChangePhone }} style={{ paddingLeft: '20px', margin: 'auto', height: '32px', width: '250px'}}>{profileInfo.phone}</Paragraph></Descriptions.Item>
                   <Descriptions.Item label="Student ID" style={{ paddingLeft: '30px', paddingTop: '10px'}}>{profileInfo.ID}</Descriptions.Item>
                 </Descriptions>
 

@@ -3,7 +3,7 @@
     overflow: hidden;
     min-Height: 100vh;
 }
-/* You could use :after - it doesn't really matter */
+
 .container:before {
     content: ' ';
     display: block;

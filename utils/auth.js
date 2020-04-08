@@ -5,7 +5,7 @@ import cookie from 'js-cookie'
 
 export const login = ({ token }) => {
   cookie.set('token', token, { expires: 1 })
-  Router.push('/')
+  Router.push('/profile')
 }
 
 export const auth = ctx => {
@@ -21,6 +21,8 @@ export const auth = ctx => {
       Router.push('/login')
     }
   }
+  
+
 
   return token
 }

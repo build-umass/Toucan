@@ -7,25 +7,31 @@ import './css/login.css';
 
 export  default function Login() {
 
-  const [userData, setUserData] = useState({ username: '', error: '' })
+  const [userData, setUserData] = useState({ username: '', password: '', error: '' })
 
   const handleSubmit = async event => {
     event.preventDefault()
     setUserData(Object.assign({}, userData, { error: '' }))
+    console.log(userData)
+    const credentials = {userData}
 
-    const username = userData.username
-    const url = '/api/login'
+    const url = 'http://localhost:3001/login'
 
     try {
       const response = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username }),
+        headers: { 'Content-Type': 'application/json',
+      },
+
+      //probably not good to have no-cors
+      mode:'no-cors',
+        body: JSON.stringify({ credentials }),
       })
       if (response.status === 200) {
         const { token } = await response.json()
         await login({ token })
       } else {
+        console.log(response.status)
         console.log('Login failed.')
         let error = new Error(response.statusText)
         error.response = response
@@ -99,6 +105,11 @@ export  default function Login() {
               placeholder='Password' 
               prefix={<LockOutlined />}
               className="inputBoxLogin"
+              onChange = {event =>
+                setUserData(
+                  Object.assign({}, userData, { password: event.target.value })
+                )
+                }
             />
           </Form.Item>
 

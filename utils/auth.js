@@ -4,6 +4,7 @@ import nextCookie from 'next-cookies'
 import cookie from 'js-cookie'
 
 export const login = ({ token }) => {
+  console.log('wtw:',token)
   cookie.set('token', token, { expires: 1 })
   Router.push('/profile')
 }
@@ -13,7 +14,17 @@ export const auth = ctx => {
 
   const { token } = nextCookie(ctx)
   // If there's no token, it means the user is not logged in.
-  if (!token) {
+
+
+  //right here, ask the server if the token is legit.
+  //let legit = server.post(encryptedCreds)
+  let legit = false;
+  if(token == "39401"){
+    legit = true;
+  }  
+
+
+  if (!legit) {
     if (typeof window === 'undefined') {
       ctx.res.writeHead(302, { Location: '/login' })  
       ctx.res.end()
@@ -35,6 +46,7 @@ export const logout = () => {
 }
 
 export const withAuthSync = WrappedComponent => {
+  console.log('here')
   const Wrapper = props => {
     const syncLogout = event => {
       if (event.key === 'logout') {

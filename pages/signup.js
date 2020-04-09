@@ -29,6 +29,50 @@ export default function Signup() {
       },
     },
   };
+  
+  let [info, setInfo] = useState({username: '', password: '', error: ''})
+  const handleSubmit = async event => {
+    event.preventDefault()
+    setInfo(Object.assign({}, info, { error: '' }))
+    console.log(info)
+    const credentials = info
+    console.log(JSON.stringify(credentials))
+    const url = 'http://localhost:3001/signup'
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain',
+      },
+
+      //probably not good to have no-cors
+      mode:'no-cors',
+        body: JSON.stringify(credentials ),
+      })
+      if (response.status === 200) {
+        const { token } = await response.json()
+        await login({ token })
+      } else {
+        console.log('signup failed.')
+        console.log(response.status)
+        let error = new Error(response.statusText)
+        error.response = response
+        throw error
+      }
+    } catch (error) {
+      console.error(
+        'You have an error in your code or there are Network issues.',
+        error
+      )
+
+      const { response } = error
+      setInfo(
+        Object.assign({}, info, {
+          error: response ? response.statusText : error.message,
+        })
+      )
+    }
+  }
 
   return (
     
@@ -70,6 +114,11 @@ export default function Signup() {
           ]}
         >
           <Input
+            onChange = {event =>
+              setInfo(
+                Object.assign({}, info, { username: event.target.value })
+              )
+              }
             placeholder='E-mail'
             className='inputBoxSignup'
           />
@@ -88,6 +137,11 @@ export default function Signup() {
           hasFeedback
         >
           <Input.Password
+            onChange = {event =>
+              setInfo(
+                Object.assign({}, info, { password: event.target.value })
+              )
+              }
             placeholder='Password'
             className='inputBoxSignup'
           />
@@ -147,7 +201,7 @@ export default function Signup() {
             type='primary'
             htmlType='submit'
             className='buttonSignup'
-            onClick={() => cookie.set('session', 'user', { expires: 3 })}>
+            onClick={handleSubmit}>
             Register
             </Button>
         </Form.Item>

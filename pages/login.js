@@ -34,6 +34,7 @@ export  default function Login() {
         console.log('Login failed.')
         let error = new Error(response.statusText)
         error.response = response
+        console.log
         throw error
       }
     } catch (error) {

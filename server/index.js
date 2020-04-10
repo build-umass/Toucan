@@ -29,6 +29,7 @@ const port = 3000;
     });
         
     server.post('/loginroute', (req, res) =>{
+      console.log('in post')
         const user = {
             username: 'patrick',
             password: 'password'

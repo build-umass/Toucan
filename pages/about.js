@@ -8,7 +8,7 @@ const { Content, Footer } = Layout;
 
 export default function about() {
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ minHeight: '100vh',margin:'none' }}>
 
       <Layout>
         <MyHeader />

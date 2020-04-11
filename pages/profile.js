@@ -36,7 +36,7 @@ export default function Profile() {
 
   return (
     
-    <Layout style={{ minHeight: '100vh', margin: 'auto', textAlgin: 'center' }}>
+    <Layout style={{ minHeight: '100vh', margin: 'none', textAlgin: 'center' }}>
 
       <Layout>
 

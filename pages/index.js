@@ -20,7 +20,7 @@ const Index = () => {
       <Layout>
 
 
-        <Content style={{ margin: '0 16px' }}>
+        <Content style={{ margin: '0 0px' }}>
 
         </Content>
       </Layout>

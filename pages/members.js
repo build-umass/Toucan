@@ -211,7 +211,7 @@ function Members(props) {
       <Layout>
         <SideBar selected={'members'} />
         <Layout>
-          <Content style={{ margin: '0 16px' }}>
+          <Content style={{ margin: '0 0px' }}>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
               <div>
                 <Button
